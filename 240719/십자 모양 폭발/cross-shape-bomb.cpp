@@ -8,8 +8,7 @@ vector<vector<int>> gravity(vector<vector<int>> &vec, int n)
     {
         vector<int> temp(1,0);
         for(int i = 1; i <= n; i++)
-            if(vec[i][j] != 0)
-                temp.push_back(vec[i][j]);
+            if(vec[i][j] != 0) temp.push_back(vec[i][j]);
         while(temp.size() < n+1)
             temp.insert(temp.begin(),0);
         for(int i = 1; i <= n; i++)
