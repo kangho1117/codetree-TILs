@@ -13,23 +13,23 @@ int main() {
     cin>>s1>>e1;
     cin>>s2>>e2;
     vector<int> temp(1,0);
-    int size = temp.size();
+    
     for(int i=1;i<=n;i++)
     {
         if(s1<=i && i <= e1) continue;
         else temp.push_back(vec[i]);
     }
-    for(auto a : temp)
-        cout<<a<<"\n";
+    int size = temp.size();
     vec.clear();
     vec.push_back(0);
-    for(int i=1;i<=size;i++)
+    for(int i=1;i<size;i++)
     {
         if(s2<=i && i <= e2) continue;
         else vec.push_back(temp[i]);
     }
     size = vec.size();
-    for(auto a : vec)
-        cout<<a<<"\n";
+    cout<<size-1<<"\n";
+    for(int i=1;i<vec.size();i++)
+        cout<<vec[i]<<"\n";
     return 0;
 }
