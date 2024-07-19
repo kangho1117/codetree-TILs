@@ -34,10 +34,10 @@ int main() {
     int boom = vec[r][c];
     for(int i=0;i<boom;i++)
     {
-        if(vec[r+i][c] != -1) vec[r+i][c] = 0;
-        if(vec[r-i][c] != -1) vec[r-i][c] = 0;
-        if(vec[r][c+i] != -1) vec[r][c+i] = 0;
-        if(vec[r][c-i] != -1) vec[r][c-i] = 0;
+        if(0 < r+i && r+i <= n && vec[r+i][c] != -1) vec[r+i][c] = 0;
+        if(0 < r-i && r-i <= n && vec[r-i][c] != -1) vec[r-i][c] = 0;
+        if(0 < c+i && c+i <= n &&vec[r][c+i] != -1) vec[r][c+i] = 0;
+        if(0 < c-i && c-i <= n &&vec[r][c-i] != -1) vec[r][c-i] = 0;
     }
 
     vec = gravity(vec, n);
