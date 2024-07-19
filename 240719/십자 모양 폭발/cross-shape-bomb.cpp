@@ -8,18 +8,12 @@ vector<vector<int>> gravity(vector<vector<int>> &vec, int n)
     {
         vector<int> temp(1,0);
         for(int i = 1; i <= n; i++)
-        {
             if(vec[i][j] != 0)
-            {
                 temp.push_back(vec[i][j]);
-            }
-        }
         while(temp.size() < n+1)
             temp.insert(temp.begin(),0);
         for(int i = 1; i <= n; i++)
-        {
             temp_2d[i][j] = temp[i];
-        }
     }
     return temp_2d;
 }
@@ -39,7 +33,6 @@ int main() {
         if(0 < c+i && c+i <= n &&vec[r][c+i] != -1) vec[r][c+i] = 0;
         if(0 < c-i && c-i <= n &&vec[r][c-i] != -1) vec[r][c-i] = 0;
     }
-
     vec = gravity(vec, n);
     for(int i=1;i<=n;i++)
     {
