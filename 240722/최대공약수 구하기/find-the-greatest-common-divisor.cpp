@@ -8,7 +8,7 @@ int fun(int a, int b)
         b = a;
         a = temp;
     }
-    int c = b % a;
+    int c = a % b;
     if(c != 0)
     {
         a = b;
