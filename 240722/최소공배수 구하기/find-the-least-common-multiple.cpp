@@ -8,6 +8,8 @@ int main() {
         a = m;
         b = n;
     }
+    a = n;
+    b = m;
     int c = a%b;
     while(c != 0)
     {
