@@ -2,24 +2,24 @@
 using namespace std;
 int fun(int a, int b)
 {
-    if(a < b)
-    {
-        int temp = b;
-        b = a;
-        a = temp;
-    }
     int c = a % b;
-    if(c != 0)
+    while(c != 0)
     {
         a = b;
         b = c;
-        return fun(b, c);
+        c = a%b;
     }
     return b;
 }
 int main() {
     int n,m;
     cin>>n>>m;
+    if(n < m)
+    {
+        int temp = m;
+        m = n;
+        n = temp;
+    }
     cout<<fun(n, m);
     return 0;
 }
