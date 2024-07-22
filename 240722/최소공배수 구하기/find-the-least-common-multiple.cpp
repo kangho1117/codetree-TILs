@@ -15,6 +15,6 @@ int main() {
         b = c;
         c = a % b;
     }
-    cout <<n*m/b;
+    cout <<(n*m)/b;
     return 0;
 }
