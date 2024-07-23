@@ -16,7 +16,7 @@ int main() {
             cin>>c;
             str2.append(to_string(c));
         }
-    if(str1.find(str2)) cout<<"Yes";
+    if(str1.find(str2) != -1) cout<<"Yes";
     else cout<<"No";
     return 0;
 }
