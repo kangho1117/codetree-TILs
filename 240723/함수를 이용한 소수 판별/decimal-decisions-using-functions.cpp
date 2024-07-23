@@ -15,7 +15,7 @@ int sum(int a,int b)
                 break;
             }
         }
-        if(check) sum += i;
+        if(check || i!=1) sum += i;
     }
     return sum;
 }
