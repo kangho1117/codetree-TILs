@@ -20,6 +20,7 @@ void cal(int m, int d)
             return;
         }
             cout<<"No";
+            return;
     }
     cout<<"No";
 }
