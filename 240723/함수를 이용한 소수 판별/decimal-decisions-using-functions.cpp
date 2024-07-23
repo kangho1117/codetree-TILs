@@ -7,6 +7,7 @@ int sum(int a,int b)
     for(int i=a;i<=b;i++)
     {
         bool check=true;
+
         for(int j=2;j<=i-1;j++)
         {
             if(i%j==0) 
@@ -15,7 +16,7 @@ int sum(int a,int b)
                 break;
             }
         }
-        if(check || i!=1) sum += i;
+        if(check && i != 1) sum += i;
     }
     return sum;
 }
