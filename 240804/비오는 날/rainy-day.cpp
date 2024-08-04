@@ -68,6 +68,11 @@ int main()
             }
         }
     }
-    cout << miny << "-" << minm << "-" << mind << " " << mindt << " " << minw << "\n";
+    cout << miny << "-";
+    if(minm<10) cout<<"0"<<minm<<"-";
+    else cout<<minm<<"-";
+    if(mind<10) cout<<"0"<<mind<<" ";
+    else cout<<mind<<" ";
+    cout<<mindt << " " << minw << "\n";
     return 0;
 }
