@@ -7,6 +7,7 @@ bool cmp(tuple<int,int,int> &a, tuple<int,int,int> &b)
 {
     int cal1 = sqrt(pow(get<0>(a),2))+sqrt(pow(get<1>(a),2));
     int cal2 = sqrt(pow(get<0>(b),2))+sqrt(pow(get<1>(b),2));
+    if(cal1 == cal2) return get<2>(a) < get<2>(b);
     return cal1 < cal2;
 }
 int main() {
