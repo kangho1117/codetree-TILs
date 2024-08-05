@@ -19,6 +19,8 @@ int main() {
     }
     sort(t,t+5);
     cout<<"name\n";
+    cout<<fixed;
+    cout.precision(1);
     for(auto &a:t)
     cout<<get<0>(a)<<" "<<get<1>(a)<<" "<<get<2>(a)<<"\n";
     sort(t,t+5,cmp);
