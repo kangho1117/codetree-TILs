@@ -9,10 +9,15 @@ int main() {
     sum1 += d1;
     for(int m = 1; m < m2; m++)
         sum2 += num_of_days[m];
-    sum2 += d2+1;
+    sum2 += d2;
     for(int i=7;i>0;i--)
     {
-        if((sum2-sum1)%i == 0)
+        if(sum2-sum1==0)
+        {
+            cout<<"Mon";
+            break;
+        }
+        else if((sum2-sum1)%i == 0)
         {
             if(i==7) cout<<"Mon";
             else if(i==6) cout<<"Tue";
