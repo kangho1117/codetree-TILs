@@ -11,6 +11,7 @@ int main() {
     for(int month = 1; month <= m2; month++)
         sum_days2 += num_of_days[month];
     sum_days2 += d2;
-    cout<<sum_days2-sum_days1;
+    if(sum_days2-sum_days1 == 0) cout<<"1";
+    else cout<<sum_days2-sum_days1;
     return 0;
 }
