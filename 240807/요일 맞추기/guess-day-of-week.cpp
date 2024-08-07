@@ -11,10 +11,7 @@ int main() {
         sum2 += num_of_days[m];
     sum2 += d2;
     int total = sum2-sum1;
-    if(total%7 == 0)
-    {
-        cout<<"Mon";
-    }
+    if(total%7 == 0) cout<<"Mon";
     else if(total%7 == 1 || total%7 == -1)
     {
         if(total > 0) cout<<"Tue";
@@ -42,7 +39,7 @@ int main() {
     }
     else if(total%7 == 6 || total%7 == -6)
     {
-        if(total > 0) cout<<"Mon";
+        if(total > 0) cout<<"Sun";
         else if(total < 0) cout<<"Tue";
     }
     return 0;
