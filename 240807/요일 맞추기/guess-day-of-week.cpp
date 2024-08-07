@@ -21,6 +21,7 @@ int main() {
             else if(i==3) cout<<"Fri";
             else if(i==2) cout<<"Sat";
             else if(i==1) cout<<"Sun";
+            break;
         }
     }
     return 0;
