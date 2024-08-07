@@ -10,24 +10,40 @@ int main() {
     for(int m = 1; m < m2; m++)
         sum2 += num_of_days[m];
     sum2 += d2;
-    for(int i=7;i>0;i--)
+    int total = sum2-sum1;
+    if(total%7 == 0)
     {
-        if(sum2-sum1==0)
-        {
-            cout<<"Mon";
-            break;
-        }
-        else if((sum2-sum1)%i == 0)
-        {
-            if(i==7) cout<<"Mon";
-            else if(i==6) cout<<"Tue";
-            else if(i==5) cout<<"Wed";
-            else if(i==4) cout<<"Thu";
-            else if(i==3) cout<<"Fri";
-            else if(i==2) cout<<"Sat";
-            else if(i==1) cout<<"Sun";
-            break;
-        }
+        if(total > 0) cout<<"Mon";
+    }
+    else if(total%7 == 1 || total%7 == -1)
+    {
+        if(total > 0) cout<<"Tue";
+        else if(total < 0) cout<<"Sun";
+    }
+    else if(total%7 == 2 || total%7 == -2)
+    {
+        if(total > 0) cout<<"Wed";
+        else if(total < 0) cout<<"Sat";
+    }
+    else if(total%7 == 3 || total%7 == -3)
+    {
+        if(total > 0) cout<<"Thu";
+        else if(total < 0) cout<<"Fri";
+    }
+    else if(total%7 == 4 || total%7 == -4)
+    {
+        if(total > 0) cout<<"Fri";
+        else if(total < 0) cout<<"Thu";
+    }
+    else if(total%7 == 5 || total%7 == -5)
+    {
+        if(total > 0) cout<<"Sat";
+        else if(total < 0) cout<<"Wed";
+    }
+    else if(total%7 == 6 || total%7 == -6)
+    {
+        if(total > 0) cout<<"Mon";
+        else if(total < 0) cout<<"Tue";
     }
     return 0;
 }
