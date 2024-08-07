@@ -13,7 +13,7 @@ int main() {
     int total = sum2-sum1;
     if(total%7 == 0)
     {
-        if(total > 0) cout<<"Mon";
+        cout<<"Mon";
     }
     else if(total%7 == 1 || total%7 == -1)
     {
