@@ -16,7 +16,10 @@ int main() {
     int cnt = total/7;
     // cout<<total<<"\n";
     // cout<<cnt<<"\n";
-    if(total%7 == 0) cnt++;
+    if(total%7 == 0) 
+    {
+       if(whatday == "Mon") cnt++;
+    }
     else if(total%7 == 1 || total%7 == -1)
     {
         if(total > 0) 
@@ -25,7 +28,7 @@ int main() {
         }
         else if(total < 0) 
         {
-            if(whatday == "Mon") cnt++;
+            cnt++;
         }
     }
     else if(total%7 == 2 || total%7 == -2)
@@ -76,7 +79,7 @@ int main() {
     {
         if(total > 0) 
         {
-            if(whatday == "Mon") cnt++;
+            cnt++;
         }
         else if(total < 0) 
         {
