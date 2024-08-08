@@ -36,7 +36,7 @@ int main() {
         }
         else if(total < 0) 
         {
-            if( whatday == "Tue" || whatday == "wed" ||whatday == "Thu" ||whatday == "Fri" ||whatday == "Sat") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu" ||whatday == "Fri" ||whatday == "Sat") cnt++;
         }
     }
     else if(total%7 == 3 || total%7 == -3)
@@ -47,7 +47,7 @@ int main() {
         }
         else if(total < 0) 
         {
-            if( whatday == "Tue" || whatday == "wed" ||whatday == "Thu" ||whatday == "Fri") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu" ||whatday == "Fri") cnt++;
         }
     }
     else if(total%7 == 4 || total%7 == -4)
@@ -58,7 +58,7 @@ int main() {
         }
         else if(total < 0) 
         {
-            if( whatday == "Tue" || whatday == "wed" ||whatday == "Thu") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu") cnt++;
         }
     }
     else if(total%7 == 5 || total%7 == -5)
@@ -69,7 +69,7 @@ int main() {
         }
         else if(total < 0) 
         {
-            if(whatday == "Tue" || whatday == "wed") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed") cnt++;
         }
     }
     else if(total%7 == 6 || total%7 == -6)
@@ -80,7 +80,7 @@ int main() {
         }
         else if(total < 0) 
         {
-            if( whatday == "Tue" || whatday == "wed" ||whatday == "Thu") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu") cnt++;
         }
     }
     cout<<cnt;
