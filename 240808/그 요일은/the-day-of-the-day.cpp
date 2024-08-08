@@ -14,8 +14,8 @@ int main() {
     sum2 += d2;
     int total = sum2-sum1;
     int cnt = total/7;
-    //cout<<total<<"\n";
-    //cout<<cnt<<"\n";
+    // cout<<total<<"\n";
+    // cout<<cnt<<"\n";
     if(total%7 == 0) cnt++;
     else if(total%7 == 1 || total%7 == -1)
     {
@@ -32,55 +32,55 @@ int main() {
     {
         if(total > 0) 
         {
-            if(whatday == "Mon" ||whatday == "Tue" || whatday == "wed") cnt++;
+            if(whatday == "Mon" ||whatday == "Tue" || whatday == "Wed") cnt++;
         }
         else if(total < 0) 
         {
-            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu" ||whatday == "Fri" ||whatday == "Sat") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "Wed" ||whatday == "Thu" ||whatday == "Fri" ||whatday == "Sat") cnt++;
         }
     }
     else if(total%7 == 3 || total%7 == -3)
     {
         if(total > 0) 
         {
-            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "Wed" ||whatday == "Thu") cnt++;
         }
         else if(total < 0) 
         {
-            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu" ||whatday == "Fri") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "Wed" ||whatday == "Thu" ||whatday == "Fri") cnt++;
         }
     }
     else if(total%7 == 4 || total%7 == -4)
     {
         if(total > 0) 
         {
-            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu" ||whatday == "Fri") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "Wed" ||whatday == "Thu" ||whatday == "Fri") cnt++;
         }
         else if(total < 0) 
         {
-            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "Wed" ||whatday == "Thu") cnt++;
         }
     }
     else if(total%7 == 5 || total%7 == -5)
     {
         if(total > 0) 
         {
-            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu" ||whatday == "Fri" ||whatday == "Sat") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "Wed" ||whatday == "Thu" ||whatday == "Fri" ||whatday == "Sat") cnt++;
         }
         else if(total < 0) 
         {
-            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "Wed") cnt++;
         }
     }
     else if(total%7 == 6 || total%7 == -6)
     {
         if(total > 0) 
         {
-            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu" ||whatday == "Fri" ||whatday == "Sat" ||whatday == "Sun") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "Wed" ||whatday == "Thu" ||whatday == "Fri" ||whatday == "Sat" ||whatday == "Sun") cnt++;
         }
         else if(total < 0) 
         {
-            if(whatday == "Mon" || whatday == "Tue" || whatday == "wed" ||whatday == "Thu") cnt++;
+            if(whatday == "Mon" || whatday == "Tue" || whatday == "Wed" ||whatday == "Thu") cnt++;
         }
     }
     cout<<cnt;
