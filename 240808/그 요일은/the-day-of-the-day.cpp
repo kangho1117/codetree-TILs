@@ -80,7 +80,7 @@ int main() {
         }
         else if(total < 0) 
         {
-            if(whatday == "Mon" || whatday == "Tue" || whatday == "Wed" ||whatday == "Thu") cnt++;
+            if(whatday == "Mon" || whatday == "Tue") cnt++;
         }
     }
     cout<<cnt;
