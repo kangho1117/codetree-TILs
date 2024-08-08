@@ -12,8 +12,10 @@ int main() {
         n /= 2;
     }
     vec.push_back(n);
-    reverse(vec.begin(), vec.end());
-    for(auto &a : vec)
-        cout<<a;
+    while(!vec.empty())
+    {
+        cout<<vec.back();
+        vec.pop_back();
+    }
     return 0;
 }
