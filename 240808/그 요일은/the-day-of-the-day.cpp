@@ -76,7 +76,7 @@ int main() {
     {
         if(total > 0) 
         {
-            if(whatday == "Mon" || whatday == "Tue" || whatday == "Wed" ||whatday == "Thu" ||whatday == "Fri" ||whatday == "Sat" ||whatday == "Sun") cnt++;
+            cnt++;
         }
         else if(total < 0) 
         {
