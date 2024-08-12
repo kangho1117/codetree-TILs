@@ -5,7 +5,7 @@ int main() {
     string n;
     int a,b,sum=0;
     cin>>a>>b>>n;
-    for(int i=n.size()-1; i>=0; i--)
+    for(int i=0;i<n.size();i++)
         sum = a * sum + n[i]-48;
     n="";
     while(sum != 1 && sum != 0)
