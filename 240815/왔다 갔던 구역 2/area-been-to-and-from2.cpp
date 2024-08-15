@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 int main() {
     int n,cur=1500;
     cin>>n;
@@ -12,23 +11,20 @@ int main() {
         cin>>a>>b;
         if(b=='R')
         {
-            for(int i=0;i<=a;i++)
+            for(int i=0;i<a;i++)
                 arr[cur+i]++;   
             cur += a;
         }
         else if(b=='L')
         {
-            for(int i=0;i<=a;i++)
+            for(int i=1;i<=a;i++)
                 arr[cur-i]++;
-            cur-=a;
+            cur -= a;
         }
     }
     int sum=0;
-    for(int i=0;i<3000;i++)
-    {
+    for(int i=1;i<3000;i++)
         if(arr[i]>=2) sum++;
-        if(arr[i]>=2 && i<2999 && arr[i+1]<2) sum--;
-    }
     cout<<sum;
     return 0;
 }
