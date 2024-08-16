@@ -1,11 +1,11 @@
 #include <iostream>
 #include <vector>
+#include <tuple>
 using namespace std;
 int main() {
     int n, cur=10000;
     cin>>n;
-    vector<pair<char,int>> arr(20001,pair<char,int>('N',0));
-    //pair<char,int> arr[20001] = {0,};
+    vector<tuple<char,int,int>> arr(20001,tuple<char,int,int>('N',0,0));
     for(int i=0;i<n;i++)
     {
         int a;
@@ -13,44 +13,43 @@ int main() {
         cin>>a>>b;
         if(b=='R')
         {
-            char fix = arr[cur].first;
             for(int i=0;i<a;i++)
             {
-                if(fix == 'N') arr[cur+i].first = 'B';
-                else if(fix == 'B') arr[cur+i].first = 'W';
-                else if(fix == 'W') arr[cur+i].first = 'B';
-                arr[cur+i].second++;
+                get<0>(arr[cur+i]) = 'B';
+                get<1>(arr[cur+i])++;
             }
             cur += (a-1);
         }
         else
         {
-            char fix = arr[cur].first;
+            char fix = get<0>(arr[cur]);
             for(int i=0;i<a;i++)
             {
-                if(fix == 'N') arr[cur+i].first = 'B';
-                else if(fix == 'B') arr[cur-i].first = 'W';
-                else if(fix == 'W') arr[cur-i].first = 'B';
-                arr[cur-i].second++;
+                    get<0>(arr[cur-i]) = 'W';
+                    get<2>(arr[cur-i])++;
             }
             cur -= (a-1);
         }
     }
     int bl=0,wh=0,gr=0;
-    for(int i=0;i<20001;i++)
+    for(auto &a : arr)
     {
-        if(arr[i].first == 'W' && arr[i].second < 4) 
+        
+        if(get<1>(a) >= 2 && get<2>(a) >= 2)
         {
-            //cout<<i-1000<<" "<<arr[i].second<<" \n";
-            wh++;
-        }
-        else if(arr[i].first == 'B' && arr[i].second < 4) {
-            //cout<<i-1000<<" "<<arr[i].second<<" \n";
+            //cout<<get<0>(a)<<" "<<get<1>(a)<<" "<<get<2>(a)<<"\n";
+            gr++;
+        } 
+        else if(get<0>(a) == 'B' )
+        {
+            //cout<<get<0>(a)<<" "<<get<1>(a)<<" "<<get<2>(a)<<"\n";
             bl++;
         }
-        else if(arr[i].second >= 4 ) {
-            //cout<<i-1000<<" "<<arr[i].second<<" \n";
-            gr++;}
+        else if(get<0>(a) == 'W' )
+        {
+            //cout<<get<0>(a)<<" "<<get<1>(a)<<" "<<get<2>(a)<<"\n";
+            wh++;
+        }
     }
     cout<<wh<<" "<<bl<<" "<<gr;
     return 0;
