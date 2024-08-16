@@ -34,22 +34,9 @@ int main() {
     int bl=0,wh=0,gr=0;
     for(auto &a : arr)
     {
-        
-        if(get<1>(a) >= 2 && get<2>(a) >= 2)
-        {
-            //cout<<get<0>(a)<<" "<<get<1>(a)<<" "<<get<2>(a)<<"\n";
-            gr++;
-        } 
-        else if(get<0>(a) == 'B' )
-        {
-            //cout<<get<0>(a)<<" "<<get<1>(a)<<" "<<get<2>(a)<<"\n";
-            bl++;
-        }
-        else if(get<0>(a) == 'W' )
-        {
-            //cout<<get<0>(a)<<" "<<get<1>(a)<<" "<<get<2>(a)<<"\n";
-            wh++;
-        }
+        if(get<1>(a) >= 2 && get<2>(a) >= 2) gr++;
+        else if(get<0>(a) == 'B' ) bl++;
+        else if(get<0>(a) == 'W' ) wh++;
     }
     cout<<wh<<" "<<bl<<" "<<gr;
     return 0;
