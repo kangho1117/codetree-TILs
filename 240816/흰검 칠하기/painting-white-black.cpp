@@ -3,9 +3,9 @@
 #include <tuple>
 using namespace std;
 int main() {
-    int n, cur=10000;
+    int n, cur=150000;
     cin>>n;
-    vector<tuple<char,int,int>> arr(200000,tuple<char,int,int>('N',0,0));
+    vector<tuple<char,int,int>> arr(300000,tuple<char,int,int>('N',0,0));
     for(int i=0;i<n;i++)
     {
         int a;
