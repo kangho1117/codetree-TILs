@@ -1,11 +1,10 @@
 #include <iostream>
 #include <vector>
-#include <tuple>
 using namespace std;
 int main() {
     int n, cur=150000;
     cin>>n;
-    vector<tuple<char,int,int>> arr(300000,tuple<char,int,int>('N',0,0));
+    vector<char> arr(300000,'N');
     for(int i=0;i<n;i++)
     {
         int a;
@@ -14,28 +13,21 @@ int main() {
         if(b=='R')
         {
             for(int i=0;i<a;i++)
-            {
-                get<0>(arr[cur+i]) = 'B';
-                get<1>(arr[cur+i])++;
-            }
+                arr[cur+i] = 'B';
             cur += (a-1);
         }
         else
         {
-            char fix = get<0>(arr[cur]);
             for(int i=0;i<a;i++)
-            {
-                    get<0>(arr[cur-i]) = 'W';
-                    get<2>(arr[cur-i])++;
-            }
+                arr[cur-i] = 'W';
             cur -= (a-1);
         }
     }
     int bl=0,wh=0;
     for(auto &a : arr)
     {
-        if(get<0>(a) == 'B' ) bl++;
-        else if(get<0>(a) == 'W' ) wh++;
+        if(a == 'B' ) bl++;
+        else if(a == 'W' ) wh++;
     }
     cout<<wh<<" "<<bl;
     return 0;
