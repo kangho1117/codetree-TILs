@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main() {
-    int arr[2001][2001] = {0,};
+    int arr[2002][2002] = {0,};
     int x1,y1,x2,y2;
     for(int n=0;n<2;n++)
     {
