@@ -1,5 +1,55 @@
 #include <iostream>
 using namespace std;
+int maxga(bool arr[2001][2001])
+{
+    int maxga=0;
+    for(int i=2000,g1=0,g2=0;i>=0;i--)
+    {
+        for(int j=2000;j>=0;j--)
+        {
+            if(arr[i][j] == true)
+            {
+                g1 = j;
+                break;
+            } 
+        }
+        for(int j=0;j<2001;j++)
+        {
+            if(arr[i][j] == true) 
+            {
+                g2 = j;
+                break;
+            } 
+        }
+        if((g1-g2+1)>maxga) maxga = (g1-g2+1);
+    } 
+    return maxga;
+}
+int maxse(bool arr[2001][2001])
+{
+    int maxse=0;
+    for(int i=2000,s1=0,s2=0;i>=0;i--)
+    {
+        for(int j=2000;j>=0;j--)
+        {
+            if(arr[j][i] == true)
+            {
+                s1 = j;
+                break;
+            } 
+        }
+        for(int j=0;j<2001;j++)
+        {
+            if(arr[j][i] == true) 
+            {
+                s2 = j;
+                break;
+            } 
+        }
+        if((s1-s2+1)>maxse) maxse = (s1-s2+1);
+    } 
+    return maxse;
+}
 
 int main() {
     int a1,b1,c1,d1,a2,b2,c2,d2;
@@ -12,23 +62,13 @@ int main() {
     for(int i=d2;i>b2;i--)
         for(int j=c2;j>a2;j--)
             arr[i][j]=0;
+
+
     int semax=0,gamax=0;
-    for(int i=2000, se=0;i>=0;i--)
-    {
-        for(int j=2000,ga=0;j>=0;j--)
-        {
-            if(arr[i][j] == 1) ga++;
-            if(ga > gamax) gamax = ga;
-        }
-    }  
-    for(int i=2000;i>=0;i--)
-    {
-        for(int j=2000,se=0;j>=0;j--)
-        {
-            if(arr[j][i] == 1) se++;
-            if(se > semax) semax = se;
-        }
-    }   
-    cout<<gamax*semax;
+    semax = maxse(arr);
+    gamax = maxga(arr);
+
+    //cout<<gamax<<"  "<<semax<<"\n";
+    cout<<(gamax*semax);
     return 0;
 }
