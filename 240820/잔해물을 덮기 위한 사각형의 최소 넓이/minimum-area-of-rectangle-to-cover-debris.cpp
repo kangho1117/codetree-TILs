@@ -23,7 +23,7 @@ int maxga(bool arr[2001][2001])
                 break;
             } 
         }
-        if( (g1-g2+1)>maxga) maxga = (g1-g2+1);
+        if((g1-g2+1)>maxga) maxga = (g1-g2+1);
     } 
     return maxga;
 }
@@ -49,11 +49,10 @@ int maxse(bool arr[2001][2001])
                 break;
             } 
         }
-        if( (s1-s2+1)>maxse) maxse = (s1-s2+1);
+        if((s1-s2+1)>maxse) maxse = (s1-s2+1);
     } 
     return maxse;
 }
-
 int main() {
     int a1,b1,c1,d1,a2,b2,c2,d2;
     cin>>a1>>b1>>c1>>d1>>a2>>b2>>c2>>d2;
@@ -65,21 +64,8 @@ int main() {
     for(int i=d2;i>b2;i--)
         for(int j=c2;j>a2;j--)
             arr[i][j]=0;
-
-    // for(int i=1010;i>=999;i--)
-    // {
-    //     for(int j=1010;j>=999;j--)
-    //     {
-    //         cout<<arr[i][j]<<" ";
-    //     }
-    //     cout<<"\n";
-    // }
-
-    int semax=0,gamax=0;
-    semax = maxse(arr);
-    gamax = maxga(arr);
-
-    //cout<<gamax<<"  "<<semax<<"\n";
+    int semax = maxse(arr);
+    int gamax = maxga(arr);
     if(empty) cout<<0;
     else cout<<(gamax*semax);
     return 0;
