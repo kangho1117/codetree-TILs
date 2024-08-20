@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
+bool empty;
 int maxga(bool arr[2001][2001])
 {
-    int maxga=0;
+    int maxga=0; empty=true;
     for(int i=2000,g1=0,g2=0;i>=0;i--)
     {
         for(int j=2000;j>=0;j--)
@@ -10,6 +11,7 @@ int maxga(bool arr[2001][2001])
             if(arr[i][j] == true)
             {
                 g1 = j;
+                empty = false;
                 break;
             } 
         }
@@ -21,7 +23,7 @@ int maxga(bool arr[2001][2001])
                 break;
             } 
         }
-        if((g1-g2) != 0 && (g1-g2+1)>maxga) maxga = (g1-g2+1);
+        if( (g1-g2+1)>maxga) maxga = (g1-g2+1);
     } 
     return maxga;
 }
@@ -35,6 +37,7 @@ int maxse(bool arr[2001][2001])
             if(arr[j][i] == true)
             {
                 s1 = j;
+                empty = false;
                 break;
             } 
         }
@@ -46,7 +49,7 @@ int maxse(bool arr[2001][2001])
                 break;
             } 
         }
-        if((s1-s2) != 0 && (s1-s2+1)>maxse) maxse = (s1-s2+1);
+        if( (s1-s2+1)>maxse) maxse = (s1-s2+1);
     } 
     return maxse;
 }
@@ -77,6 +80,7 @@ int main() {
     gamax = maxga(arr);
 
     //cout<<gamax<<"  "<<semax<<"\n";
-    cout<<(gamax*semax);
+    if(empty) cout<<0;
+    else cout<<(gamax*semax);
     return 0;
 }
