@@ -21,7 +21,7 @@ int maxga(bool arr[2001][2001])
                 break;
             } 
         }
-        if((g1-g2+1)>maxga) maxga = (g1-g2+1);
+        if((g1-g2) != 0 && (g1-g2+1)>maxga) maxga = (g1-g2+1);
     } 
     return maxga;
 }
@@ -46,7 +46,7 @@ int maxse(bool arr[2001][2001])
                 break;
             } 
         }
-        if((s1-s2+1)>maxse) maxse = (s1-s2+1);
+        if((s1-s2) != 0 && (s1-s2+1)>maxse) maxse = (s1-s2+1);
     } 
     return maxse;
 }
@@ -63,6 +63,14 @@ int main() {
         for(int j=c2;j>a2;j--)
             arr[i][j]=0;
 
+    // for(int i=1010;i>=999;i--)
+    // {
+    //     for(int j=1010;j>=999;j--)
+    //     {
+    //         cout<<arr[i][j]<<" ";
+    //     }
+    //     cout<<"\n";
+    // }
 
     int semax=0,gamax=0;
     semax = maxse(arr);
