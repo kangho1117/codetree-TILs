@@ -2,19 +2,19 @@
 using namespace std;
 
 int main() {
-    int n,max=0,bef=-1;
+    int n,max=0;
     cin>>n;
+    int arr[n];
     for(int i=0,now=0;i<n;i++)
+        cin>>arr[i];
+    for(int i=0,cnt=0;i<n;i++)
     {
-        int inf;
-        cin>>inf;
-        now++;
-        if(inf != bef)
+        cnt++;
+        if(i==0 || arr[i] != arr[i-1])
         {
-            if(now > max) max = now;
-            now = 0;
+            if(max < cnt) max = cnt;
+            cnt=0;
         }
-        bef = inf;
     }
     cout<<max;
     return 0;
