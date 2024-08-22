@@ -9,12 +9,12 @@ int main() {
         cin>>arr[i];
     for(int i=0,cnt=0;i<n;i++)
     {
-        cnt++;
         if(i==0 || arr[i] != arr[i-1])
         {
-            if(max < cnt) max = cnt;
             cnt=0;
         }
+        cnt++;
+        if(max < cnt) max = cnt;
     }
     cout<<max;
     return 0;
