@@ -45,6 +45,6 @@ int main() {
         if(arr1[i] == arr2[i]) {cout<<i; b = true; break;}
 
     }
-    if(b) cout<<-1;
+    if(!b) cout<<-1;
     return 0;
 }
