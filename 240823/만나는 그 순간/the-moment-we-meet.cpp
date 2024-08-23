@@ -42,7 +42,7 @@ int main() {
     bool b= false;
     for(int i=1; i<1000*1000+1 ;i++)
     {
-        if(arr1[i] == arr2[i]) {cout<<i; b = true; break;}
+        if(arr1[i] == arr2[i] && arr1[i] != 0) {cout<<i; b = true; break;}
 
     }
     if(!b) cout<<-1;
