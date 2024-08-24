@@ -4,12 +4,10 @@ int main() {
     int n,m,k;
     cin>>n>>m>>k;
     int arr[n+1] = {0,};
-    int save[m];
-    for(int i=0;i<m;i++)
-        cin>>save[i];
     for(int i=0;i<m;i++)
     {
-        int target = save[i];
+        int target;
+        cin>>target;
         arr[target]++;
         if(arr[target] >= k)
         {
