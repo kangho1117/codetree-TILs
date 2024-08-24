@@ -3,15 +3,17 @@ using namespace std;
 int main() {
     int n,m,k;
     int arr[n+1] = {0,};
+    int save[m] = {0,};
     cin>>n>>m>>k;
     for(int i=0;i<m;i++)
+        cin>>save[i];
+    for(int i=0;i<m;i++)
     {
-        int a;
-        cin>>a;
-        arr[a]++;
-        if(arr[a] >= k)
+        int target = save[i];
+        arr[target]++;
+        if(arr[target] >= k)
         {
-            cout<<a;
+            cout<<target;
             return 0;
         } 
     }
