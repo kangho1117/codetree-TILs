@@ -23,15 +23,20 @@ int main() {
         while(t--)
             b.push_back(b.back()+v);
     }
-
     char sun;
-    if(a[1] > b[1]) sun = 'a';
-    else sun = 'b';
     int ch=0;
     for(int i=1;i<a.size();i++)
     {
-        if(sun == 'b' && a[i] > b[i]) {sun = 'a'; ch++;}
-        else if(sun == 'a' && a[i] < b[i]) {sun = 'b'; ch++;}
+        if(a[i] > b[i])
+        {
+            if(sun == 'b') ch++;
+            sun = 'a'; 
+            }
+        else if(a[i] < b[i])
+        {
+            if(sun == 'a' )ch++;
+            sun = 'b'; 
+            }
     }
     cout<<ch;
     return 0;
