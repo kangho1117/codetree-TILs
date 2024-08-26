@@ -40,11 +40,18 @@ int main() {
         }
     }
     int cnt=0;
-    // for(auto a : arr1)
-    //     cout<<a<<" ";
-    // cout<<"\n\n";
-    // for(auto a : arr2)
-    //     cout<<a<<" ";
+    while(arr1.size() != arr2.size())
+    {
+        if(arr1.size() < arr2.size())
+        {
+            arr1.push_back(arr1.back());
+        }
+        else if(arr1.size() > arr2.size())
+        {
+            arr2.push_back(arr2.back());
+        }
+    }
+
 
     for(int i=1,j=1; i<arr1.size()-1, j<arr2.size()-1;)
     {
