@@ -24,7 +24,7 @@ int main() {
     }
     for(int i=0;i<m;i++)
     {
-        int t, bt=1;;
+        int t, bt=1;
         char d;
         cin>>t>>d;
         while(t--)
@@ -46,14 +46,16 @@ int main() {
     // for(auto a : arr2)
     //     cout<<a<<" ";
 
-    for(int i=1,j=1; i<arr1.size(), j<arr2.size();)
+    for(int i=1,j=1; i<arr1.size()-1, j<arr2.size()-1;)
     {
-        if(i<arr1.size()) i++;
-        if(j<arr2.size()) j++;
+        if(i<arr1.size()-1) i++;
+        if(j<arr2.size()-1) j++;
         // cout<<i<<" "<<j<<"\n";
         if(arr1[i-1] != arr2[j-1] && arr1[i] == arr2[j])
         {
             cnt++;
+            //cout<<i<<" "<<j<<"\n";
+            //cout<<arr1[i-1]<<" "<<arr2[j-1]<<" "<<arr1[i]<<" "<<arr2[j]<<"\n";
         }
     }
     cout<<cnt;
