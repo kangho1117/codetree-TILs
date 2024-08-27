@@ -21,7 +21,12 @@ int main() {
         // for(int i=1; i<=N; i++)
         // cout<<"{"<<ans[i].first<<" "<<ans[i].second<<"}";
         // cout<<"\n\n";
-        if(ans[get<1>(a)].first == 1 && ans[get<1>(a)].second > 0 )
+        if(ans[get<1>(a)].first == 1 && ans[get<1>(a)].second > 0 && ans[get<2>(a)].first == 1 && ans[get<2>(a)].second > 0 )
+        {
+            ans[get<1>(a)].second--;
+            ans[get<2>(a)].second--;
+        }
+        else if(ans[get<1>(a)].first == 1 && ans[get<1>(a)].second > 0 )
         {
             ans[get<1>(a)].second--;
             if(ans[get<2>(a)].first == 0)
