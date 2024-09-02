@@ -5,52 +5,46 @@ int main() {
     char d;
     cin>>n>>t>>r>>c>>d;
     int arr[n][n]={0};
-    for(int i=0;i<=t;i++)
+    for(int i=1;i<=t;i++)
     {
-        if(r < 1)
-        {
-            d='D';
-            r++;
-            continue;
-        }
-        else if(n < r)
-        {
-            d='U';
-            r--;
-            continue;
-        }
-        else if(c < 1)
-        {
-            d='R';
-            c++;
-            continue;
-        }
-        else if(n < c)
-        {
-            d='L';
-            c--;
-            continue;
-        }
-        
         if(d=='U')
         {
             r--;
-            continue;
         }
         else if(d=='D')
         {
             r++;
-            continue;
+
         }
         else if(d=='R')
         {
             c++;
-            continue;
+            
         }
         else if(d=='L')
         {
             c--;
-            continue;
+        }
+        
+        if(r < 1)
+        {
+            d='D';
+            r=1;
+        }
+        else if(n < r)
+        {
+            d='U';
+            r=n;
+        }
+        else if(c < 1)
+        {
+            d='R';
+            c=1;
+        }
+        else if(n < c)
+        {
+            d='L';
+            c=n;
         }
     }
     cout<<r<<" "<<c<<"\n";
