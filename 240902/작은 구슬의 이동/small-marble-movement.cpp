@@ -7,25 +7,10 @@ int main() {
     int arr[n][n]={0};
     for(int i=1;i<=t;i++)
     {
-        if(d=='U')
-        {
-            r--;
-        }
-        else if(d=='D')
-        {
-            r++;
-
-        }
-        else if(d=='R')
-        {
-            c++;
-            
-        }
-        else if(d=='L')
-        {
-            c--;
-        }
-        
+        if(d=='U') r--;
+        else if(d=='D') r++;
+        else if(d=='R') c++;
+        else if(d=='L') c--;
         if(r < 1)
         {
             d='D';
