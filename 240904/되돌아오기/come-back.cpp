@@ -12,10 +12,8 @@ int main() {
         if(a=='E'){
             while(b--)
             {
-                
                 y++;
                 t++;
-                //cout<<x<<" "<<y<<" "<<t<<"\n";
                 if(x==0 && y==0)
                 {
                     cout<<t;
@@ -26,10 +24,8 @@ int main() {
         else if(a=='S'){
             while(b--)
             {
-                
                 x++;
                 t++;
-                //cout<<x<<" "<<y<<" "<<t<<"\n";
                 if(x==0 && y==0)
                 {
                     cout<<t;
@@ -42,7 +38,6 @@ int main() {
             {
                 y--;
                 t++;
-                //cout<<x<<" "<<y<<" "<<t<<"\n";
                 if(x==0 && y==0)
                 {
                     cout<<t;
@@ -55,7 +50,6 @@ int main() {
             {
                 x--;
                 t++;
-                //cout<<x<<" "<<y<<" "<<t<<"\n";
                 if(x==0 && y==0)
                 {
                     cout<<t;
