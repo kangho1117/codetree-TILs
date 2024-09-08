@@ -8,5 +8,5 @@ for i in range(m):
     stu_arr[num] += 1
     if stu_arr[num] >= k:
         ans = num
-
+        break
 print(ans)
