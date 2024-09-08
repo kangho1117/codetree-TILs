@@ -18,19 +18,18 @@ for _ in range(m):
         B_dist[i+1] = B_d
 
 lead = 0
-leader = 'A'
-if A_dist[1] > B_dist[1]:
-    leader = 'A'
-elif A_dist[1] > B_dist[1]:
-    leader = 'B'
-
-for i in range(2, len(A_dist)):
-    if leader == 'A':
-        if A_dist[i] < B_dist[i]:
+leader = 0
+for i in range(1, len(A_dist)):
+    if A_dist[i] < B_dist[i]:
+        if leader == 0:
+            leader = 'B'
+        if leader =='A':
             lead += 1
             leader = 'B'
-    else :
-        if A_dist[i] > B_dist[i]:
+    elif A_dist[i] > B_dist[i]:
+        if leader == 0:
+            leader = 'A'
+        if leader =='B':
             lead += 1
             leader = 'A'
 
