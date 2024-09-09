@@ -7,17 +7,9 @@ int main() {
     while(sum<=n*m)
     {
         arr[x][y] = sum++;
-        if(0 < x + dx[d] && x+dx[d] <= n && 0 < y + dy[d] && y+dy[d] <= m && arr[x+dx[d]][y+dy[d]] == 0)
-        {
-            x += dx[d];
-            y += dy[d];
-        }
-        else {
-            d = (d-1+4)%4;
-            x += dx[d];
-            y += dy[d];
-            }
-        //cout<<"d : "<<d<<"\n";
+        if(0 >= x + dx[d] || x+dx[d] > n || 0 >= y + dy[d] || y+dy[d] > m || arr[x+dx[d]][y+dy[d]] != 0) d = (d-1+4)%4;
+        x += dx[d];
+        y += dy[d];
     }
     for(int i=1;i<=n;i++)
     {
