@@ -23,18 +23,21 @@ for _ in range(m):
 
 if time_a < time_b:
     for i in range(time_a, time_b):
-        pos_a[i] = pos_a[time_a]
+        pos_a[i] = pos_a[time_a-1]
 if time_b > time_a:
     for i in range(time_b, time_a):
-        pos_b[i] = pos_b[time_b]
+        pos_b[i] = pos_b[time_b-1]
 
 cnt = 0
 #print(pos_a[14158],pos_b[14158],pos_a[14159],pos_b[14159])
+
 for i in range(1, len(pos_a)):
     #print(i, pos_a[i], pos_b[i])
-    if i == max(time_a, time_b) + 1:
+    if i == max(time_a, time_b):
         break
     if pos_a[i] == pos_b[i] and pos_a[i-1] != pos_b[i-1]:
+        print(i-2, pos_a[i-2], pos_b[i-2],cnt)
+        print(i-1, pos_a[i-1], pos_b[i-1],cnt)
         cnt += 1
-        #print(cnt)
+        print(i, pos_a[i], pos_b[i],cnt)
 print(cnt)
