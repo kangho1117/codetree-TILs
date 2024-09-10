@@ -36,8 +36,8 @@ for i in range(1, len(pos_a)):
     if i == max(time_a, time_b):
         break
     if pos_a[i] == pos_b[i] and pos_a[i-1] != pos_b[i-1]:
-        print(i-2, pos_a[i-2], pos_b[i-2],cnt)
-        print(i-1, pos_a[i-1], pos_b[i-1],cnt)
+        #print(i-2, pos_a[i-2], pos_b[i-2],cnt)
+        #print(i-1, pos_a[i-1], pos_b[i-1],cnt)
         cnt += 1
-        print(i, pos_a[i], pos_b[i],cnt)
+        #print(i, pos_a[i], pos_b[i],cnt)
 print(cnt)
