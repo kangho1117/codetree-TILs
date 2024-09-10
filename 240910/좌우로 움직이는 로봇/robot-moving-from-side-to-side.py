@@ -21,6 +21,13 @@ for _ in range(m):
         pos_b[time_b] = pos_b[time_b - 1] + (1 if d == 'R' else -1)
         time_b += 1
 
+if time_a > time_b:
+    for i in range(time_a + 1, time_b+1):
+        pos_a[i] = pos_a[time_a]
+if time_b > time_a:
+    for i in range(time_b + 1, time_a + 1):
+        pos_b[i] = pos_b[time_b]
+
 cnt = 0
 #print(pos_a[14158],pos_b[14158],pos_a[14159],pos_b[14159])
 for i in range(2, len(pos_a)):
