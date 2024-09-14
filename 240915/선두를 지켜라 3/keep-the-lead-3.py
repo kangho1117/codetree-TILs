@@ -22,7 +22,7 @@ for _ in range(M):
 
 leader, answer = 0, 0
 for i in range(1, time_a):
-    print(i, pos_a[i], pos_b[i])
+    #print(i, pos_a[i], pos_b[i])
     if pos_a[i] > pos_b[i]:
 
         if leader == 2 or leader == 0:
