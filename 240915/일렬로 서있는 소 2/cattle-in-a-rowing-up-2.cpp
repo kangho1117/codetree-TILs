@@ -12,7 +12,7 @@ int main() {
         {
             for(int k=j+1;k<n;k++)
             {
-                if(arr[i] < arr[j] && arr[j] < arr[k]) sum++;
+                if(arr[i] <= arr[j] && arr[j] <= arr[k]) sum++;
             }
         }
     }
