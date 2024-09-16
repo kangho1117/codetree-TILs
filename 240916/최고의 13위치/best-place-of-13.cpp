@@ -16,6 +16,7 @@ int main() {
             if(vec[i][j+1]) temp++;
             if(vec[i][j+2]) temp++;
             if(max < temp) max = temp;
+            temp=0;
         }
     }
     cout<<max;
