@@ -2,7 +2,7 @@
 #include <list>
 using namespace std;
 int main() {
-    int n,min=100300;
+    int n,min=2100000000;
     cin>>n;
     list<int> l;
     for(int i=0,temp;i<n;i++)
