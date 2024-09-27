@@ -95,13 +95,13 @@ int main() {
             if(b==5)
             {
                 cout<<"1\n";
-                cout<<i-2<<" "<<j-2;
+                cout<<k-2<<" "<<j-2;
                 return 0;
             }
             else if(w==5)
             {
                 cout<<"2\n";
-                cout<<i-2<<" "<<j-2;
+                cout<<k-2<<" "<<j-2;
                 return 0;
             }
         }
