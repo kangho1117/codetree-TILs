@@ -1,24 +1,34 @@
 #include <iostream>
 using namespace std;
 int main() {
-    int n,s,ans=10000000;
+    int n,s,ans=10000000,allsum=0;
     cin>>n>>s;
     int arr[n];
     for(int i=0;i<n;i++)
+    {
         cin>>arr[i];
+        allsum+=arr[i];
+    }
+
     for(int i=0;i<n;i++)
     {
         for(int j=0;j<n;j++)
         {
-            if(i == j) continue;
-            int sum=0;
-            for(int k=0;k<n;k++)
+            if(i==j) continue;
+            else
             {
-                if(k == i || k== j) continue;
-                sum+=arr[k];
+                int temp = allsum - arr[i] - arr[j], newtemp;
+                if(temp-s < 0)
+                {
+                    newtemp = -(temp-s);
+                    if(newtemp < ans) ans = newtemp;
+                }
+                else
+                {
+                    newtemp = temp-s;
+                    if(newtemp < ans) ans = newtemp;
+                }
             }
-            if(sum != 0 && sum>s && sum-s < ans) ans = sum-s;
-            else if(sum != 0 && sum<s && s-sum < ans) ans = s-sum;
         }
     }
     cout<<ans;
