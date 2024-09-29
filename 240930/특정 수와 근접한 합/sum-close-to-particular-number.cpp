@@ -17,8 +17,8 @@ int main() {
                 if(k == i || k== j) continue;
                 sum+=arr[k];
             }
-            if(sum>s && sum-s < ans) ans = sum-s;
-            else if(sum<s && s-sum < ans) ans = s-sum;
+            if(sum != 0 && sum>s && sum-s < ans) ans = sum-s;
+            else if(sum != 0 && sum<s && s-sum < ans) ans = s-sum;
         }
     }
     cout<<ans;
