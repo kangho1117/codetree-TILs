@@ -8,7 +8,7 @@ int main() {
     vector<int> arr(n);
     for(int i=0;i<n;i++)
         cin>>arr[i];
-    for(int i=0,temp;i<n-2;i++)
+    for(int i=0,temp;i<n-k-1;i++)
     {
         temp=0;
         for(int j=i;j<i+k;j++)
