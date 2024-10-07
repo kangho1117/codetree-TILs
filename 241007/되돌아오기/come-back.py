@@ -11,7 +11,7 @@ direction_dict = {
 
 dx, dy = [1, 0 ,-1, 0], [0, -1, 0, 1]
 
-answer = 0
+answer = -1
 time = 0
 
 for _ in range(n):
