@@ -24,7 +24,6 @@ def in_range(x, y):
 
 x, y, move_dir = initialize(k)
 
-move_dir = 0
 move_num = 0
 while in_range(x,y):
     if arr_2d[x][y] == '/':
