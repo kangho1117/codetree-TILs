@@ -19,5 +19,6 @@ for i in range(len(input_char)):
     
     if x == 0 and y == 0:
         answer = time
+        break
 
 print(answer)
