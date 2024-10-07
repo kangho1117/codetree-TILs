@@ -21,6 +21,10 @@ for _ in range(n):
     for _ in range(distance):
         time += 1
         x,y = x + dx[dir], y + dy[dir]
+        #print(time, x, y)
         if x == 0 and y == 0:
             answer = time
+            break
+    if answer != -1:
+        break
 print(answer)
