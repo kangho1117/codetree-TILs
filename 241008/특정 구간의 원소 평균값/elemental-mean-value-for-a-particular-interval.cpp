@@ -8,23 +8,28 @@ int main() {
         cin>>arr[i];
     for(int k=1; k<=n; k++)
     {
-        for(int i = 0, sum; i<=n-k; i++)
+        for(int i = 0, sum; i<n; i++)
         {
             sum=0;
-            for(int j=i; j<i+k && i+k<n; j++)
+            for(int j=i; i+k<=n && j<i+k ; j++)
             {
                 sum+=arr[j];
             }
-            sum/=k;
-            //cout<<k<<" "<<sum<<"\n";
-            for(int z=0;z<n;z++)
+            double temp = (double)sum/(double)k;
+            if(temp - (int)temp == 0)
             {
-                if(arr[z] == sum)
+            for(int j=i; i+k<=n && j<i+k ; j++)
+            {
+                if(sum==0) break;
+                else if(arr[j] == temp)
                 {
                     cnt++;
                     break;
                 }
             }
+                
+            }
+            //cout<<k<<" "<<temp<<" "<<i<<" "<<i+k-1<<"\n";
         }
     }
     cout<<cnt;
