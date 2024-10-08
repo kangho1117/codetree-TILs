@@ -8,7 +8,7 @@ int main() {
         cin>>arr[i];
     for(int k=1; k<=n; k++)
     {
-        for(int i = 0, sum; i<n; i++)
+        for(int i = 0, sum; i<=n-k; i++)
         {
             sum=0;
             for(int j=i; j<i+k && i+k<n; j++)
