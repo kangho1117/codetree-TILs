@@ -18,7 +18,7 @@ for i in range(1, n*m):
     dx, dy = x + dxs[dir_num], y + dys[dir_num]
     if not in_range(dx, dy) or arr_2d[dx][dy] != 0:
         dir_num = (dir_num + 1) % 4
-    if i % 24 == 0:
+    if i % 26 == 0:
         j = 0
 
     x, y = x + dxs[dir_num], y + dys[dir_num]
