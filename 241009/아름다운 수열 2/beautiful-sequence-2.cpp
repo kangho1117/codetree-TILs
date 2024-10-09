@@ -28,6 +28,8 @@ int main() {
             for(int i=0;i<m;i++,temp++)
             {
                 //cout<<B[i]<<" "<<A[temp-A.begin()]<<" "<<temp-A.begin()<<"\n";
+                if(B.front() != A[temp-A.begin()]) it++;
+
                 if(B[i] != A[temp-A.begin()])
                 {
                     err = true;
