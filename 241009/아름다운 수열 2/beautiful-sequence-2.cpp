@@ -36,10 +36,10 @@ int main() {
                     broken = 1;
                     break;
                 }
-                broken = 2;
+                else if(B[k] == A[j] && k==m-1)broken = 2;
             }
             if(broken==2) 
-            {
+            { 
                 cnt++;
                 arr[B.front()].pop_front();
             }
