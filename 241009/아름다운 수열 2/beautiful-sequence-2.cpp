@@ -28,7 +28,11 @@ int main() {
         auto it = A.begin();
         while(it != A.end())
         {
-            if(arr[B.front()]>0) it = find(it, A.end(),B.front());
+            if(arr[B.front()]>0) 
+            {it = find(it, A.end(),B.front());
+            arr[B.front()]--;
+            }
+
             else break;
             auto temp = it;
             bool err = false;
