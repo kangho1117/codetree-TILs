@@ -24,10 +24,11 @@ int main() {
     {
         auto it = A.begin();
         int num = arr[B.front()];
-        while(num>0 && it != A.end())
+        while(num>0)
         {
-            it = find(it, A.end()-B.size(),B.front());
+            it = find(it, A.end()-B.size()+1,B.front());
             num--;
+            if(it == A.end()-B.size()+1) break;
             auto temp = it;
             bool err = false;
             for(int i=0;i<m;i++,temp++)
