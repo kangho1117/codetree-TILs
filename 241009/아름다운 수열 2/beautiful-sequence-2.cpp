@@ -19,20 +19,21 @@ int main() {
         it = find(it, A.end(),B.front());
         if(it != A.end()) 
         {
+            auto temp = it;
             bool err = false;
-            for(int i=0;i<m;i++,it++)
+            for(int i=0;i<m;i++,temp++)
             {
-                //cout<<B[i]<<" "<<A[it-A.begin()]<<"\n";
-                if(B[i] != A[it-A.begin()])
+                //cout<<B[i]<<" "<<A[temp-A.begin()]<<" "<<temp-A.begin()<<"\n";
+                if(B[i] != A[temp-A.begin()])
                 {
                     err = true;
                     break;
                 }
             }
             //cout<<"\n\n";
+            it++;
             if(!err) cnt++;
-            else if(it == A.end()) break;
-            
+            else if(temp == A.end()) {break;}
         }
         else break;
         }
