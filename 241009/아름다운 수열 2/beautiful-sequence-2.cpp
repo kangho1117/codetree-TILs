@@ -26,12 +26,12 @@ int main() {
     do
     {
         auto it = A.begin();
-        vector<int> temparr = arr;
+        int num = arr[B.front()];
         while(it != A.end())
         {
-            if(temparr[B.front()]>0) 
+            if(num>0) 
             {it = find(it, A.end(),B.front());
-            temparr[B.front()]--;
+            num--;
             }
 
             else break;
@@ -39,7 +39,7 @@ int main() {
             bool err = false;
             for(int i=0;i<m;i++,temp++)
             {
-                cout<<B[i]<<" "<<A[temp-A.begin()]<<" "<<temp-A.begin()<<"\n";
+                //cout<<B[i]<<" "<<A[temp-A.begin()]<<" "<<temp-A.begin()<<"\n";
                 if(B.front() != A[temp-A.begin()]) it++;
                 if(B[i] != A[temp-A.begin()])
                 {
@@ -47,7 +47,7 @@ int main() {
                     break;
                 }
             }
-            cout<<"\n\n";
+            //cout<<"\n\n";
             it++;
             if(!err) cnt++;
             else if(temp == A.end()) break;
