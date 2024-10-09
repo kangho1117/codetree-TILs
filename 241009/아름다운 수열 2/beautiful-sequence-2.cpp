@@ -10,7 +10,7 @@ int main() {
         cin>>A[i];
     for(int i=0;i<n;i++)
         cin>>B[i];
-    sort(B.begin(), B.end());
+    //sort(B.begin(), B.end());
     do
     {
         auto it = A.begin();
