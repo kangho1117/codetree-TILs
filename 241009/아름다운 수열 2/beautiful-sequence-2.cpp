@@ -24,14 +24,10 @@ int main() {
     {
         auto it = A.begin();
         int num = arr[B.front()];
-        while(it != A.end())
+        while(num>0 && it != A.end())
         {
-            if(num>0) 
-            {it = find(it, A.end(),B.front());
+            it = find(it, A.end(),B.front());
             num--;
-            }
-
-            else break;
             auto temp = it;
             bool err = false;
             for(int i=0;i<m;i++,temp++)
@@ -47,7 +43,7 @@ int main() {
             //cout<<"\n\n";
             it++;
             if(!err) cnt++;
-            else if(temp == A.end()) break;
+            if(temp == A.end()) break;
         }
     }while(next_permutation(B.begin(), B.end()));
     cout<<cnt;
