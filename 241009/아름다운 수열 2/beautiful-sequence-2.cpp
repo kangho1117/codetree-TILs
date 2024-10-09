@@ -14,10 +14,7 @@ int main() {
         cin>>A[i];
         arr[A[i]]++;
     }
-    // for(int i=0;i<10;i++)
-    //     cout<<arr[i]<<" ";
-    // cout<<"\n";
-    for(int i=0;i<n;i++)
+    for(int i=0;i<m;i++)
         cin>>B[i];
     sort(B.begin(), B.end());
 
