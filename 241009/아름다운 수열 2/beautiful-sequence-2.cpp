@@ -6,9 +6,9 @@ int main() {
     ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
-    int n,m,cnt=0,arr[101]={0,};
+    int n,m,cnt=0;
     cin>>n>>m;
-    vector<int> A(n),B(m);
+    vector<int> A(n),B(m),arr(101,0);
     for(int i=0;i<n;i++)
     {
         cin>>A[i];
@@ -26,11 +26,12 @@ int main() {
     do
     {
         auto it = A.begin();
+        vector<int> temparr = arr;
         while(it != A.end())
         {
-            if(arr[B.front()]>0) 
+            if(temparr[B.front()]>0) 
             {it = find(it, A.end(),B.front());
-            arr[B.front()]--;
+            temparr[B.front()]--;
             }
 
             else break;
