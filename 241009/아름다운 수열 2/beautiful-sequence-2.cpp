@@ -3,6 +3,9 @@
 #include <algorithm>
 using namespace std;
 int main() {
+    ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
     int n,m,cnt=0;
     cin>>n>>m;
     vector<int> A(n),B(m);
