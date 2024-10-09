@@ -8,43 +8,44 @@ int main() {
 	cout.tie(0);
     int n,m,cnt=0;
     cin>>n>>m;
-    vector<int> A(n),B(m),arr(101,0);
+    vector<int> A(n),B(m);
+    vector<vector<int>> arr(101);
     for(int i=0;i<n;i++)
     {
         cin>>A[i];
-        arr[A[i]]++;
+        arr[A[i]].push_back(i);
     }
     for(int i=0;i<m;i++)
         cin>>B[i];
     sort(B.begin(), B.end());
 
-
+    // for(auto &a : arr)
+    // {
+    //     for(auto &b : a)
+    //     {
+    //         cout<<b<<" ";
+    //     }
+    //     cout<<"\n";
+    // }
 
     do
     {
-        auto it = A.begin();
-        int num = arr[B.front()];
-        while(num>0)
+        int size = arr[B.front()].size();
+        for(int i=0;i<size;i++)
         {
-            it = find(it, A.end()-B.size()+1,B.front());
-            num--;
-            if(it == A.end()-B.size()+1) break;
-            auto temp = it;
-            bool err = false;
-            for(int i=0;i<m;i++,temp++)
+            int broken = 0;
+            for(int k=0,j=arr[B.front()][i]; k<m && arr[B.front()][i]+m<=n && j<arr[B.front()][i]+m; j++,k++)
             {
-                //cout<<B[i]<<" "<<A[temp-A.begin()]<<" "<<temp-A.begin()<<"\n";
-                if(B.front() != A[temp-A.begin()]) it++;
-                if(B[i] != A[temp-A.begin()])
+                //cout<<B[k]<<" "<<A[j]<<"\n";
+                if(B[k] != A[j])
                 {
-                    err = true;
+                    broken = 1;
                     break;
                 }
+                broken = 2;
             }
+            if(broken==2) {cnt++;}
             //cout<<"\n\n";
-            it++;
-            if(!err) cnt++;
-            if(temp == A.end()) break;
         }
     }while(next_permutation(B.begin(), B.end()));
     cout<<cnt;
