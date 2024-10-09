@@ -19,24 +19,17 @@ int main() {
         cin>>B[i];
     sort(B.begin(), B.end());
 
-    // for(auto &a : arr)
-    // {
-    //     for(auto &b : a)
-    //     {
-    //         cout<<b<<" ";
-    //     }
-    //     cout<<"\n";
-    // }
-
     do
     {
         int size = arr[B.front()].size();
         for(int i=0;i<size;i++)
         {
             int broken = 0;
+            
             for(int k=0,j=arr[B.front()][i]; k<m && arr[B.front()][i]+m<=n && j<arr[B.front()][i]+m; j++,k++)
             {
                 //cout<<B[k]<<" "<<A[j]<<"\n";
+                if(A.size()-arr[B.front()][i] < B.size()) break;
                 if(B[k] != A[j])
                 {
                     broken = 1;
