@@ -26,7 +26,7 @@ int main() {
         int num = arr[B.front()];
         while(num>0 && it != A.end())
         {
-            it = find(it, A.end(),B.front());
+            it = find(it, A.end()-B.size(),B.front());
             num--;
             auto temp = it;
             bool err = false;
