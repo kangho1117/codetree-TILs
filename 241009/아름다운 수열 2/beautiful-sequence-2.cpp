@@ -10,15 +10,16 @@ int main() {
         cin>>A[i];
     for(int i=0;i<n;i++)
         cin>>B[i];
-    //sort(B.begin(), B.end());
+    sort(B.begin(), B.end());
+
+
+
     do
     {
         auto it = A.begin();
-        while(1)
+        while(it != A.end())
         {
-        it = find(it, A.end(),B.front());
-        if(it != A.end()) 
-        {
+            it = find(it, A.end(),B.front());
             auto temp = it;
             bool err = false;
             for(int i=0;i<m;i++,temp++)
@@ -33,9 +34,7 @@ int main() {
             //cout<<"\n\n";
             it++;
             if(!err) cnt++;
-            else if(temp == A.end()) {break;}
-        }
-        else break;
+            else if(temp == A.end()) break;
         }
     }while(next_permutation(B.begin(), B.end()));
     cout<<cnt;
