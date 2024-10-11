@@ -10,11 +10,11 @@ int main() {
         cin>>a>>b;
         arr[b] += a;
     }
-    for(int i=k;i<=100;i++)
+    for(int i=0;i<=100;i++)
     {
         for(int j=i-k,temp=0;j<=i+k;j++)
         {
-            temp+=arr[j];
+            if(j>0) temp+=arr[j];
             if(temp > max) max = temp; 
         }
     }
