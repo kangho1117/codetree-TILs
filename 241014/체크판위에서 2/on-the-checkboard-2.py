@@ -1,7 +1,7 @@
 r,c = map(int, input().split())
 
 rc_arr = [list(input()) for _ in range(r)]
-
+cnt = 0
 for i in range(1, r):
     for j in range(1, c):
         for k in range(i+1, r-1):
