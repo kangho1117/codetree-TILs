@@ -1,6 +1,6 @@
 r,c = map(int, input().split())
 
-rc_arr = [list(input()) for _ in range(r)]
+rc_arr = [input().split() for _ in range(r)]
 cnt = 0
 for i in range(1, r):
     for j in range(1, c):
