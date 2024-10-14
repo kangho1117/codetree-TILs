@@ -25,20 +25,11 @@ for(int k=1;k<=n;k++)
             else if(arr[j].second == 'G') {G++;temp.push_back({arr[j].first,'G'});}
         }
         if(H==G)
-        {
-
             size = max(size, temp[temp.size()-1].first - temp[0].first);
-        }
         else if(H==0)
-        {
-
             size = max(size, temp[temp.size()-1].first - temp[0].first);
-        }
         else if(G==0)
-        {
-
             size = max(size, temp[temp.size()-1].first - temp[0].first);
-        }
     }
 }
     cout<<size;
