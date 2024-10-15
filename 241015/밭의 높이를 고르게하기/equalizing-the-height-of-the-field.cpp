@@ -18,7 +18,8 @@ int main() {
     small.sort(greater<>());
     while(t-oricnt>0)
     {
-        if(big.empty())
+        if(big.empty() && small.empty()) break;
+        else if(big.empty())
         {
             cost += h-small.front();
             small.pop_front();
