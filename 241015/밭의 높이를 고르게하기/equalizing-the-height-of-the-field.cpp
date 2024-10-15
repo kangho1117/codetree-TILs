@@ -14,9 +14,7 @@ int main() {
     {
         int tempcost=0;
         for(int j=i;j<i+t && j<n;j++)
-        {
             tempcost += abs(arr[j]-h);
-        }
         cost = min(cost, tempcost);
     }
     cout<<cost;
