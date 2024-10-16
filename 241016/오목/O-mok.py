@@ -1,6 +1,7 @@
 arr_2d = [list(map(int, input().split())) for _ in range(19)]
 
-answer1 = []
+answer1 = 0
+ans_i, ans_j = 0, 0
 for i in range(14):
     for j in range(14):
         #print(arr_2d[i][j])
@@ -19,4 +20,5 @@ for i in range(14):
                 ans_i, ans_j = i + 1 + 2, j + 1 - 2
 
 print(answer1)
-print(ans_i, ans_j)
+if ans_i != 0 and ans_j != 0:
+    print(ans_i, ans_j)
