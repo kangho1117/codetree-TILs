@@ -10,5 +10,6 @@ for i in range(n):
     sum = 0
     for j in range(i+2,n):
         sum = arr[i] + arr[j]
-    answer = max(answer, sum)
+        answer = max(answer, sum)
+
 print(answer)
