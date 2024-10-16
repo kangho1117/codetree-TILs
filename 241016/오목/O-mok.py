@@ -1,23 +1,40 @@
+import sys
 arr_2d = [list(map(int, input().split())) for _ in range(19)]
 
 answer1 = 0
 ans_i, ans_j = 0, 0
-for i in range(14):
-    for j in range(14):
-        #print(arr_2d[i][j])
-        if arr_2d[i][j] != 0 and  arr_2d[i][j] == arr_2d[i+1][j] and arr_2d[i][j] == arr_2d[i+2][j] and arr_2d[i][j] == arr_2d[i+3][j] and arr_2d[i][j] == arr_2d[i+4][j]:
-            answer1 = arr_2d[i][j]
-            ans_i, ans_j = i + 1 + 2, j + 1
-        if arr_2d[i][j] != 0 and arr_2d[i][j] == arr_2d[i][j+1] and arr_2d[i][j] == arr_2d[i][j+2] and arr_2d[i][j] == arr_2d[i][j+3] and arr_2d[i][j] == arr_2d[i][j+4]:
-            answer1 = arr_2d[i][j]
-            ans_i, ans_j = i + 1, j + 1 + 2
-        if arr_2d[i][j] != 0 and arr_2d[i][j] == arr_2d[i+1][j+1] and arr_2d[i][j] == arr_2d[i+2][j+2] and arr_2d[i][j] == arr_2d[i+3][j+3] and arr_2d[i][j] == arr_2d[i+4][j+4]:
-            answer1 = arr_2d[i][j]
-            ans_i, ans_j = i + 1 + 2, j + 1 + 2
-        if  j >= 4:
-            if arr_2d[i][j] != 0 and arr_2d[i][j] == arr_2d[i+1][j-1] and arr_2d[i][j] == arr_2d[i+2][j-2] and arr_2d[i][j] == arr_2d[i+3][j-3] and arr_2d[i][j] == arr_2d[i+4][j-4]:
-                answer1 = arr_2d[i][j]
-                ans_i, ans_j = i + 1 + 2, j + 1 - 2
+
+def in_range(x, y):
+    return 0 <= x and x < 19 and 0 <= y and y < 19
+
+dxs, dys = [1,1,1,-1,-1,-1,0,0],[-1,0,1, -1, 0, 1, -1, 1]
+
+for i in range(19):
+    for j in range(19):
+
+        if arr_2d[i][j] == 0:
+            continue
+        for dx, dy in zip(dxs, dys):
+            curt = 1
+            curtx = i
+            curty = j
+
+            while True:
+                nx = curtx + dx
+                ny = curty + dy
+
+                if not in_range(nx, ny):
+                    break
+                if arr_2d[nx][ny] != arr_2d[i][j]:
+                    break
+                curt += 1
+                curtx = nx
+                curty = ny
+            if curt == 5:
+                print(arr_2d[i][j])
+                print(i + 2 * dx + 1 , j + 2 * dy + 1)
+                sys.exit()
+print(0)
 
 print(answer1)
 if ans_i != 0 and ans_j != 0:
