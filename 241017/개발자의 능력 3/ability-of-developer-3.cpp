@@ -25,9 +25,6 @@ int main() {
                         {
                             if(i1 == k2 || j1 == k2 || k1 == k2) continue;
                             int temp2 = arr[i2]+arr[j2]+arr[k2];
-                            // cout<<arr[i1]<<" "<<arr[j1]<<" "<<arr[k1]<<"\n";
-                            // cout<<arr[i2]<<" "<<arr[j2]<<" "<<arr[k2]<<"\n";
-                            // cout<<temp1<<" "<<temp2<<"\n";
                             ans = min(ans,abs(temp1-temp2));
                         }
                     }
