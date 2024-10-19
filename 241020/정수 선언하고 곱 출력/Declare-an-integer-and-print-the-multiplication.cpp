@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 int main() {
-    int a=26,b=5;
-    cout<<a<<" * "<<b<<" = "<<a*b;
+    cout<<"26 * 5 = "<<26*5;
     return 0;
 }
