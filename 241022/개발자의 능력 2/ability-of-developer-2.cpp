@@ -8,9 +8,7 @@ int main() {
         cin>>arr[i];
     sort(arr.begin(), arr.end());
     for(int i=0,j=5;i<=2,j>=3;i++,j--)
-    {
         vec[i] = arr[i]+arr[j];
-    }
     sort(vec.begin(), vec.end());
     cout<<vec.back()-vec.front();
     return 0;
