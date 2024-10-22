@@ -4,8 +4,8 @@ bucket = [0] * 102
 
 for i in range(n):
     candy,cordinate = map(int,input().split())
-    bucket[cordinate] = candy
-
+    bucket[cordinate] += candy
+#print(bucket)
 max_cnt = 0
 
 for c in range(k+1,len(bucket)-k):
