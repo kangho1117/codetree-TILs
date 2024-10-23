@@ -22,17 +22,10 @@ for i in range(1,max_loc+1):
             else :
                 continue        
 
-        if  h_cnt == 0 or g_cnt == 0:
+        if  h_cnt == 0 or g_cnt == 0 or h_cnt == g_cnt:
             if arr[i] != 0 and arr[j] != 0:
                 hg_size = j-i
                 #print('구간은 ',i,j,h_cnt,g_cnt,'사진 크기',hg_size,'최대크기',max_size)
-                max_size = max(max_size, hg_size)
-                
-        if h_cnt == g_cnt:
-            if arr[i] != 0 and arr[j] != 0:
-                hg_size = j-i
-                #print('구간은 ',i,j,h_cnt,g_cnt,'사진 크기',hg_size,'최대크기',max_size)            
-                max_size = max(max_size, hg_size)
-            
+                max_size = max(max_size, hg_size)           
 
 print(max_size)
