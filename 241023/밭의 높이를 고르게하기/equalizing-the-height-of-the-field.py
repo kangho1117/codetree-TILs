@@ -13,10 +13,10 @@ for i in range(n):
             #print(j)
             while 1:
                 #print(arr[j],t,cost)
-                if arr[j] < t:
+                if arr[j] < h:
                     arr[j] += 1
                     cost += 1
-                elif arr[j] > t:
+                elif arr[j] > h:
                     arr[j] -= 1
                     cost += 1
                 else :
