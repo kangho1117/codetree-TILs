@@ -13,14 +13,9 @@ int main() {
         ma = arr[2] + arr[3];
         if(mi != ma && ma != arr[4])
         {
-            
             int tempma = max(ma,max(mi,arr[4]));
             int tempmi = min(ma,min(mi,arr[4]));
-            if(ans>tempma-tempmi) 
-            {
-                ans = tempma-tempmi;
-                //cout<<tempma<<" "<<tempmi<<"\n";
-            }
+            if(ans>tempma-tempmi) ans = tempma-tempmi;
         }
     }while(next_permutation(arr.begin(), arr.end()));
     if(ans == 100000) cout<<-1;
