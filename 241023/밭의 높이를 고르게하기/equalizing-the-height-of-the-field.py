@@ -6,7 +6,7 @@ bart = list(map(int, input().split()))
 
 min_cost = num_max
 for i in range(n):
-    if i+t < n:
+    if i+t <= n:
         arr = bart.copy()
         cost = 0
         for j in range(i,i+t):
