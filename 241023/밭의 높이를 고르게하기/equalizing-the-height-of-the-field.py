@@ -1,8 +1,10 @@
+import sys
+num_max = sys.maxsize
 n,h,t = map(int, input().split())
 
 bart = list(map(int, input().split()))
 
-min_cost = 100000
+min_cost = num_max
 for i in range(n):
     if i+t < n:
         arr = bart.copy()
