@@ -1,17 +1,29 @@
 #include <iostream>
 #include <algorithm>
+#include <vector>
 using namespace std;
 int main() {
-    int arr[5];
+    vector<int> arr(5);
+    int ma=0,mi=10000,ans=100000;
     for(int i=0;i<5;i++)
         cin>>arr[i];
-    sort(arr,arr+5);
-    if(arr[0]+arr[2] != arr[1]+arr[3])
-    {
-        int ma = max(arr[4],max(arr[0]+arr[2],arr[1]+arr[3]));
-        int mi = min(arr[4],min(arr[0]+arr[2],arr[1]+arr[3]));
-        cout<<ma-mi;
-    }
-    else cout<<-1;
+    sort(arr.begin(), arr.end());
+    do{
+        mi = arr[0] + arr[1];
+        ma = arr[2] + arr[3];
+        if(mi != ma && ma != arr[4])
+        {
+            
+            int tempma = max(ma,max(mi,arr[4]));
+            int tempmi = min(ma,min(mi,arr[4]));
+            if(ans>tempma-tempmi) 
+            {
+                ans = tempma-tempmi;
+                //cout<<tempma<<" "<<tempmi<<"\n";
+            }
+        }
+    }while(next_permutation(arr.begin(), arr.end()));
+    if(ans == 100000) cout<<-1;
+    else cout<<ans;
     return 0;
 }
