@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <climits>
 using namespace std;
 bool cmp(pair<int,int>&a, pair<int,int>&b)
 {
@@ -9,7 +10,7 @@ bool cmp(pair<int,int>&a, pair<int,int>&b)
     return a.first<b.first;
 }
 int main() {
-    int n,area=999;
+    int n,area=INT_MAX;
     cin>>n;
     vector<pair<int,int>> arr(n);
     for(int i=0;i<n;i++)
@@ -19,7 +20,7 @@ int main() {
         arr[i] = {a,b};
     }       
     sort(arr.begin(), arr.end());
-    int tmin1=999,tmax1=0,tmin2=999,tmax2=0;
+    int tmin1=9INT_MAX99,tmax1=0,tmin2=INT_MAX,tmax2=0;
     for(int i=0;i<n-1;i++)
     {
         auto a = arr[i];
@@ -29,7 +30,7 @@ int main() {
         tmax2 = max(tmax2,a.second);
     }
     area = min(area,(tmax1-tmin1)*(tmax2-tmin2));
-    tmin1=999,tmax1=0,tmin2=999,tmax2=0;
+    tmin1=INT_MAX,tmax1=0,tmin2=INT_MAX,tmax2=0;
     for(int i=1;i<n;i++)
     {
         auto a = arr[i];
