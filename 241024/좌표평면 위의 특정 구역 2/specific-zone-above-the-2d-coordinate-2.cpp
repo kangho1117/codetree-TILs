@@ -20,7 +20,7 @@ int main() {
         arr[i] = {a,b};
     }       
     sort(arr.begin(), arr.end());
-    int tmin1=9INT_MAX99,tmax1=0,tmin2=INT_MAX,tmax2=0;
+    int tmin1=INT_MAX,tmax1=0,tmin2=INT_MAX,tmax2=0;
     for(int i=0;i<n-1;i++)
     {
         auto a = arr[i];
