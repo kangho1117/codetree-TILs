@@ -26,7 +26,7 @@ for i in range(n):
                 sum2 = arr[k] + arr[l]
                 sum3 = sum(arr) - sum1 - sum2
                 #print(sum1,sum2,sum3)
-                if sum1 == sum2 == sum3:
+                if sum1 == sum2 or sum2 == sum3 or sum1 == sum3:
                     continue
                 ret = max(sum1,sum2,sum3) - min(sum1,sum2,sum3)
                 #print(ret)
