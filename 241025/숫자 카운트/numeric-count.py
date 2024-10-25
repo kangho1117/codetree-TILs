@@ -27,14 +27,14 @@ for i in range(1,10):
                     one_cnt += 1                    
                 if c == k:
                     one_cnt += 1
-                if (i != a and i in (a,b,c)) or (j != b and  j in (a,b,c)) or (k != c and k in (a,b,c)):
+                # if (i != a and i in (a,b,c)) or (j != b and  j in (a,b,c)) or (k != c and k in (a,b,c)):
+                #     two_cnt += 1
+                if a == j or a == k:
                     two_cnt += 1
-                # if a == j or a == k:
-                #     two_cnt += 1
-                # if b == i or b == k:
-                #     two_cnt += 1
-                # if c == i or c == j:
-                #     two_cnt += 1
+                if b == i or b == k:
+                    two_cnt += 1
+                if c == i or c == j:
+                    two_cnt += 1
             
                 if one_cnt != cnt1 or two_cnt != cnt2:
                     success =False
