@@ -6,7 +6,7 @@ arr_2d = [tuple(map(int, input().split())) for _ in range(n)]
 
 answer = - sys.maxsize
 for i in range(n):
-    time_arr = [0] * 25
+    time_arr = [0] * 1001
     time = 0
     for j in range(n):
         if i == j:
