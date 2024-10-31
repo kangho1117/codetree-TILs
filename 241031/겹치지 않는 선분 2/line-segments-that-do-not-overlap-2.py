@@ -16,7 +16,7 @@ for i in range(n):
             break
         if arr_2d[i][1][0] >= arr_2d[j][1][0]:
             
-            if ol_cnt == 0:
+            if ol_cnt == 0 and answer >= 2:
                 answer -= 2
                 ol_cnt += 1
             else :
