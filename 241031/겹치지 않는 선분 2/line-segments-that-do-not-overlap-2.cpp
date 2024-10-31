@@ -34,9 +34,9 @@ int main() {
             //cout<<"\n";
         }
     }
-    for(int i=999990;i<=1000010;i++)
-        cout<<arr[i][0]<<" "<<arr[i][1]<<"\n";
-    cout<<"\n";
+    // for(int i=999990;i<=1000010;i++)
+    //     cout<<arr[i][0]<<" "<<arr[i][1]<<"\n";
+    // cout<<"\n";
     cout<<ans;
     return 0;
 }
