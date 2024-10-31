@@ -11,17 +11,21 @@ int main() {
         arr[x2+1000000][1] = i;
     }
     check[0] = 1;
-    for(int i=0;i<=2000000;i++)
+    for(int i=0,mem=0;i<=2000000;i++)
     {
         int x1 = arr[i][0];
         if(check[x1] == 0 && x1>0)
         {
             bool cross = false;
             check[x1] = 1;
-            for(int j=0;j<=2000000;j++)
+            for(int j=mem;j<=2000000;j++)
             {
                 int x2 = arr[j][1];
-                if(x2 == x1) break;
+                if(x2 == x1) 
+                {
+                    if(!cross) mem = j;
+                    break;
+                }
                 if(x2 != 0 && x2 != x1 && check[x2] == 0)
                 {
                     cross = true;
@@ -31,6 +35,7 @@ int main() {
                 }
             }
             if(cross) ans--;
+    
             //cout<<"\n";
         }
     }
