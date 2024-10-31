@@ -24,7 +24,7 @@ int main() {
                 int x2 = arr[j][1];
                 if(x2 == x1) 
                 {
-                    if(!cross) mem = j+1;
+                    mem = j+1;
                     break;
                 }
                 if(x2 != 0 && x2 != x1 && check[x2] == 0)
