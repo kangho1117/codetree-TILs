@@ -6,7 +6,6 @@ using namespace std;
 int main() {
     int n;
     cin>>n;
-    int ans = n;
     map<int,bool> mp;
     vector<pair<int,int>> vec;
     for(int i=0,x1,x2;i<n;i++)
