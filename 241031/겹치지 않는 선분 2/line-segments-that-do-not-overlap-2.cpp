@@ -3,7 +3,7 @@ using namespace std;
 int main() {
     int n,arr[2000001][2]={0,};
     cin>>n;
-    int ans = n, check[n+1]={0,};
+    int ans = n, check[2000001]={0,};
     for(int i=1,x1,x2;i<=n;i++)
     {
         cin>>x1>>x2;
