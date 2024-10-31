@@ -26,6 +26,6 @@ int main() {
             }
         }
     }
-    cout<<mp.size();
+    cout<<n-mp.size();
     return 0;
 }
