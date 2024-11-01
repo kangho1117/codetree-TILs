@@ -15,13 +15,13 @@ int main() {
         vec[i]/=2;
         for(int j=0;j<n;j++)
         {
-            if(tempb > vec[j])
+            if(tempb >= vec[j])
             {
                 tempb-=vec[j];
                 cnt++;
             }
-            else break;
         }
+        //cout<<i<<" "<<cnt<<" "<<vec[i]<<"\n";
         if(ans < cnt) ans = cnt;
         vec[i]*=2;
     }
