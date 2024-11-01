@@ -4,7 +4,7 @@ arr = [int(input()) for _ in range(n)]
 arr.sort()
 answer = 1
 for i in range(n):
-    money_sum = arr[i]
+    money_sum = arr[i] / 2
     for j in range(n):
         if i == j :
             continue
