@@ -2,8 +2,7 @@ n, b = map(int, input().split())
 
 arr = [int(input()) for _ in range(n)]
 arr.sort()
-
-answer = 0
+answer = 1
 for i in range(n):
     money_sum = arr[i]
     for j in range(n):
@@ -11,7 +10,9 @@ for i in range(n):
             continue
         if  money_sum + arr[j] <= 18:
             money_sum += arr[j]
+            answer = max(answer, j+1)
+            #print(money_sum,answer)
         else :
-            answer = j+1
+            break
 
 print(answer)
