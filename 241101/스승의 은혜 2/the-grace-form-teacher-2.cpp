@@ -21,7 +21,6 @@ int main() {
                 cnt++;
             }
         }
-        //cout<<i<<" "<<cnt<<" "<<vec[i]<<"\n";
         if(ans < cnt) ans = cnt;
         vec[i]*=2;
     }
