@@ -32,9 +32,15 @@ int main() {
                     break;
                 }
             }
-            if(eat && drug < cheese[i].size())
+            if(eat)
             {
-                drug = cheese[i].size();
+                int cnt=0;
+                bool arr[51]={0,};
+                for(auto &a : cheese[i])
+                    arr[a.first]=true;
+                for(int i=1;i<=50;i++)
+                    if(arr[i]) cnt++;
+                if(drug < cnt) drug = cnt;
             }
         }
     }
