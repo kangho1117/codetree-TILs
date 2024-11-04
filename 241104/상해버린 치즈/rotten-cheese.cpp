@@ -11,20 +11,22 @@ int main() {
         cin>>p>>m>>t;
         if(t < cheese[m][p]) cheese[m][p] = t;
     }
-    vector<pair<int,int>> patient;
+    vector<int> patient(51,1000);
     for(int i=0;i<s;i++)
     {
         int p,t;
         cin>>p>>t;
-        patient.push_back({p,t});
+        if(t < patient[p]) patient[p] = t;
     }
 
     for(int i=1;i<=50;i++)
     {
         bool eat = true;
-        for(auto &a : patient)
+        for(int p=1;p<=50;p++)
         {
-            if(cheese[i][a.first] != 1000 && cheese[i][a.first] >= a.second)
+            if(patient[p] == 1000) continue;
+            int t = patient[p];
+            if(cheese[i][p] != 1000 && cheese[i][p] >= t)
             {
                 eat = false;
                 break;
@@ -34,7 +36,7 @@ int main() {
         {
             int cnt=0;
             for(int j=1;j<=50;j++)
-                if(cheese[i][j]!=1000 && 0 <cheese[i][j]) cnt++;
+                if(cheese[i][j]<1000) cnt++;
             if(drug < cnt) drug = cnt;
         }
     }
