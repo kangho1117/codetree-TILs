@@ -4,12 +4,12 @@ using namespace std;
 int main() {
     int n,m,d,s,drug=0;
     cin>>n>>m>>d>>s;
-    vector<vector<pair<int,int>>> cheese(51,vector<pair<int,int>>());
+    vector<vector<int>> cheese(51,vector<int>(51,1000));
     for(int i=0;i<d;i++)
     {
         int p,m,t;
         cin>>p>>m>>t;
-        cheese[m].push_back({p,t});
+        if(t < cheese[m][p]) cheese[m][p] = t;
     }
     vector<pair<int,int>> patient;
     for(int i=0;i<s;i++)
@@ -21,27 +21,21 @@ int main() {
 
     for(int i=1;i<=50;i++)
     {
-        for(auto &a : cheese[i])
+        bool eat = true;
+        for(auto &a : patient)
         {
-            bool eat = false;
-            for(auto &b : patient)
+            if(cheese[i][a.first] != 1000 && cheese[i][a.first] >= a.second)
             {
-                if(a.first == b.first && a.second < b.second)
-                {
-                    eat = true;
-                    break;
-                }
-            }
-            if(eat)
-            {
-                int cnt=0;
-                bool arr[51]={0,};
-                for(auto &a : cheese[i])
-                    arr[a.first]=true;
-                for(int i=1;i<=50;i++)
-                    if(arr[i]) cnt++;
-                if(drug < cnt) drug = cnt;
-            }
+                eat = false;
+                break;
+            } 
+        }
+        if(eat)
+        {
+            int cnt=0;
+            for(int j=1;j<=50;j++)
+                if(cheese[i][j]!=1000 && 0 <cheese[i][j]) cnt++;
+            if(drug < cnt) drug = cnt;
         }
     }
     cout<<drug;
