@@ -3,16 +3,17 @@ using namespace std;
 int n,m,d,s,cheese[51][51]={0,},sick[51]={0,},maxnum=0;
 void print()
 {
-    for(int i=1;i<=5;i++)
+    for(int i=1;i<=22;i++)
     {
-        for(int j=1;j<=10;j++)
+        cout<<i<<" : ";
+        for(int j=1;j<=50;j++)
         {
             cout<<cheese[i][j]<<" ";
         }
         cout<<"\n";
     }
     cout<<"\n";
-    for(int i=1;i<=5;i++)
+    for(int i=1;i<=50;i++)
     {
         cout<<sick[i]<<" ";
     }
@@ -38,10 +39,10 @@ int main() {
         bool find = true;
         for(int j=1;j<=50;j++)
         {
-            if(cheese[i][j] != 0)
+            if(sick[j] != 0)
             {
                 int eattime = cheese[i][j];
-                if(sick[j] != 0 && eattime >= sick[j])
+                if(eattime == 0 || eattime >= sick[j])
                 {
                     find = false;
                     break;
