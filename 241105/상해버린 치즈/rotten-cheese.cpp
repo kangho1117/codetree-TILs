@@ -1,25 +1,7 @@
 #include <iostream>
 using namespace std;
-int n,m,d,s,cheese[51][51]={0,},sick[51]={0,},maxnum=0;
-void print()
-{
-    for(int i=1;i<=22;i++)
-    {
-        cout<<i<<" : ";
-        for(int j=1;j<=50;j++)
-        {
-            cout<<cheese[i][j]<<" ";
-        }
-        cout<<"\n";
-    }
-    cout<<"\n";
-    for(int i=1;i<=50;i++)
-    {
-        cout<<sick[i]<<" ";
-    }
-    cout<<"\n";
-}
 int main() {
+    int n,m,d,s,cheese[51][51]={0,},sick[51]={0,},maxnum=0;
     cin>>n>>m>>d>>s;
     for(int i=0;i<d;i++)
     {
@@ -33,7 +15,6 @@ int main() {
         cin>>p>>t;
         sick[p] = t;
     }
-    //print();
     for(int i=1;i<=50;i++)
     {
         bool find = true;
@@ -52,9 +33,7 @@ int main() {
         if(find)
         {
             int temp=0;
-            for(int j=1;j<=50;j++)
-                if(cheese[i][j] != 0)
-                    temp++;
+            for(int j=1;j<=50;j++) if(cheese[i][j] != 0) temp++;
             if(temp > maxnum) maxnum = temp;
         }
     }
