@@ -6,8 +6,8 @@ ans = 0
 for i in range(1, n+1):
     for j in range(1,n+1):
         if i == j:
-            correct = True
-        
+            continue
+        correct = True
         for lists in arr_2d:
             index_i = lists.index(i)
             index_j = lists.index(j)
