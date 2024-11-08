@@ -20,7 +20,6 @@ int main() {
             for(int k=0;k<n;k++)
             {
                 if(i==k || j==k)continue;
-                int temp=0;
                 bool find = true;
                 for(int w=0,p=1;w<n-1;w++)
                 {
@@ -31,6 +30,7 @@ int main() {
                         p++;
                     }
                     else p=1;
+                    if(w+p>=n) continue;
                     if(vec[w].second >= vec[w+p].first)
                     {
                         find = false;
