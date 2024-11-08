@@ -22,10 +22,16 @@ int main() {
                 if(i==k || j==k)continue;
                 int temp=0;
                 bool find = true;
-                for(int w=1;w<n;w++)
+                for(int w=0,p=1;w<n-1;w++)
                 {
                     if(w==i || w==j || w==k) continue;
-                    if(vec[w].first <= vec[w-1].second)
+                    if(w+p==i || w+p==j || w+p==k) 
+                    {
+                        w--;
+                        p++;
+                    }
+                    else p=1;
+                    if(vec[w].second >= vec[w+p].first)
                     {
                         find = false;
                         break;
