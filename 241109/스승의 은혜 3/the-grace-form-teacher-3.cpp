@@ -34,6 +34,7 @@ int main() {
                 if(maxnum < j-1) maxnum = j-1;
                 break;
             }
+            if(maxnum < j) maxnum = j;
         }
         v[i].first *= 2;
     }
@@ -49,6 +50,7 @@ int main() {
                 if(maxnum < j-1) maxnum = j-1;
                 break;
             }
+            if(maxnum < j) maxnum = j;
         }
         v[i].second *= 2;
     }
