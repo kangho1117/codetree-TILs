@@ -23,10 +23,12 @@ int main() {
         v[i].first /=2;
         for(int j=1, money = b;j<=n;j++)
         {
-            int temp = v[j].first + v[j].second;
-            if(b-temp>=0 && maxnum < j) 
-            {maxnum = j; b-=temp;}
-            else break;
+            money -= v[j].first + v[j].second;
+            if(money<0)
+            {
+                if(maxnum < j-1) maxnum = j-1;
+                break;
+            }
         }
         v[i].first *= 2;
     }
