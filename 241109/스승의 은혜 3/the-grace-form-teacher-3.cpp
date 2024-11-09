@@ -29,6 +29,7 @@ int main() {
                 if(maxnum < j) maxnum = j;
             }
         }
+        v[i].first *= 2;
     }
     cout<<maxnum;
     return 0;
