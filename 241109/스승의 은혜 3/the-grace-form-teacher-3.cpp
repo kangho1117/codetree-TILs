@@ -26,6 +26,7 @@ int main() {
             int temp = v[j].first + v[j].second;
             if(b-temp>=0 && maxnum < j) 
             {maxnum = j; b-=temp;}
+            else break;
         }
         v[i].first *= 2;
     }
