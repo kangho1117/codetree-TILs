@@ -37,13 +37,13 @@ int main() {
         arr[i][0] = arr[i][1] + arr[i][2];
         if(cnt > ans) ans = cnt;
     }
-    for(int i=0;i<n;i++)
-    {
-        arr2[i][0] = arr2[i][1] + arr2[i][2]/2;
-        int cnt = repeat(arr2,b,n);
-        arr2[i][0] = arr2[i][1] + arr2[i][2];
-        if(cnt > ans) ans = cnt;
-    }
+    // for(int i=0;i<n;i++)
+    // {
+    //     arr2[i][0] = arr2[i][1] + arr2[i][2]/2;
+    //     int cnt = repeat(arr2,b,n);
+    //     arr2[i][0] = arr2[i][1] + arr2[i][2];
+    //     if(cnt > ans) ans = cnt;
+    // }
     cout<<ans;
     return 0;
 }
