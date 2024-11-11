@@ -2,11 +2,16 @@
 #include <algorithm>
 #include <vector>
 using namespace std;
+bool cmp(vector<int> &a, vector<int> &b)
+{
+    if(a[0] == b[0]) return a[1] < b[1];
+    return a[0] < b[0];
+}
 int repeat(vector<vector<int>> arr, int budget, int i, int n)
 {
     int cnt=0;
     arr[i][0]/=2;
-    sort(arr.begin(), arr.end());
+    sort(arr.begin(), arr.end(),cmp);
     for(int j=0;j<n;j++)
         {
             int price = arr[j][0]+arr[j][1];
@@ -30,13 +35,15 @@ int main() {
         arr2[i][0] = b;
         arr2[i][1] = a;
     }
-
+    // sort(arr.begin(), arr.end(), cmp);
+    // for(int i=0;i<n;i++)
+    //     cout<<arr[i][0]<<" "<<arr[i][1]<<"\n";
     for(int i=0;i<n;i++)
     {
         int cnt = repeat(arr,b,i,n);
         if(cnt > ans) ans = cnt;
     }
-    sort(arr2.begin(), arr2.end());
+    sort(arr2.begin(), arr2.end(),cmp);
     for(int i=0;i<n;i++)
     {
         arr2[i][1]/=2;
