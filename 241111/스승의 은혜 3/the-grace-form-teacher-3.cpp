@@ -20,7 +20,6 @@ int main() {
                 budget -= price;
                 cnt++;
             }
-            else break;
         }
         arr[i][0]*=2;
         if(cnt > ans) ans = cnt;
