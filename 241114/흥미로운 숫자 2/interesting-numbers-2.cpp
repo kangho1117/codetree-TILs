@@ -13,14 +13,15 @@ int main() {
         bool other=false, one=false;
         for(int j=0;j<=9;j++)
         {
-            if(arr[j]==1) one = true;
-            else if(other == false && arr[j] > 1) other = true;
-            else if((one == true || other == true) && arr[j] > 0) 
+            if(one == true && other == true && arr[j] > 0) 
             {
                 one = false;
                 other = false;
                 break;
             }
+            else if(arr[j]==1) one = true;
+            else if(other == false && arr[j] > 1) other = true;
+            
         }
         if(one && other) cnt++;
     }
