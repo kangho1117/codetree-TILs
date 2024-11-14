@@ -19,7 +19,7 @@ int main() {
                 other = false;
                 break;
             }
-            else if(arr[j]==1) one = true;
+            else if(one == false && arr[j]==1) one = true;
             else if(other == false && arr[j] > 1) other = true;
             
         }
