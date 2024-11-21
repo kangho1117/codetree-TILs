@@ -7,7 +7,7 @@ int main() {
     int arr[n+2]={0,};
     for(int i=1;i<=n;i++)
         cin>>arr[i];
-    for(int i=1;i<n;i++)
+    for(int i=1;i<=1000;i++)
     {
         int cnt=0;
         bool bing = false;
@@ -22,10 +22,7 @@ int main() {
                 bing = true;
                 cnt++;
             }
-            else if(arr[j]>i && arr[j+1]<=i && bing)
-            {
-                bing = false;
-            }
+            else if(arr[j]>i && arr[j+1]<=i && bing) bing = false;
         }
         ans = max(ans,cnt);
     }
