@@ -12,11 +12,9 @@ int main() {
         int cnt=0;
         for(int j=0;j<n;j++)
         {
-            if(arr[j]>i)
-            {
-                if(j==0) cnt++;
-                else if(arr[j-1]<=i) cnt++;
-            }
+            if(j==0 && arr[j]>i) cnt++;
+            else if(j == n-1 && arr[j]>i && arr[j-1]<=i) cnt++;
+            else if(arr[j-1]<=i && arr[j]>i && arr[j+1]<=i) cnt++;  
         }
         ans = max(ans,cnt);
     }
