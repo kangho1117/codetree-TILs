@@ -8,10 +8,7 @@ int main() {
     {
         string str = to_string(i);
         bool find = true;
-        for(int a=0,b=str.size()-1;b>0,a<str.size();a++,b--)
-        {
-            if(str[a] != str[b]) find = false;
-        }
+        for(int a=0,b=str.size()-1;b>0,a<str.size();a++,b--) if(str[a] != str[b]) find = false;
         if(find) cnt++;
     }
     cout<<cnt;
