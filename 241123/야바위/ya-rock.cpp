@@ -4,7 +4,7 @@ int main() {
     int st,n,ans=0,ansnum=0;
     cin>>n;
     int arr2[n+1][4];
-    for(int i=1;i<=n;i++)
+    for(int i=0;i<n;i++)
         {
             int a,b,c;
             cin>>a>>b>>c;
