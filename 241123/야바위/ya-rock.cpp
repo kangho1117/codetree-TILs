@@ -3,7 +3,7 @@ using namespace std;
 int main() {
     int st,n,ans=0,ansnum=0;
     cin>>n;
-    int arr2[n+1][4];
+    int arr2[n][4]={0,};
     for(int i=0;i<n;i++)
         {
             int a,b,c;
@@ -23,7 +23,6 @@ int main() {
             arr[0] = arr[a];
             arr[a] = arr[b];
             arr[b] = arr[0];
-            arr[0] = 0;
             if(arr[c]) cnt++;
         }
         if(cnt > ans) 
@@ -32,6 +31,6 @@ int main() {
             ansnum = st;
         }
     }
-    cout<<ansnum;
+    cout<<ans;
     return 0;
 }
