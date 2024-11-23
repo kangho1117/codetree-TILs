@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main() {
-    int st,n,ans=0,ansnum=0;
+    int st,n,ans=0;
     cin>>n;
     int arr2[n][4]={0,};
     for(int i=0;i<n;i++)
@@ -25,11 +25,7 @@ int main() {
             arr[b] = arr[0];
             if(arr[c]) cnt++;
         }
-        if(cnt > ans) 
-        {
-            ans = cnt;
-            ansnum = st;
-        }
+        if(cnt > ans) ans = cnt;
     }
     cout<<ans;
     return 0;
