@@ -66,6 +66,6 @@ int main() {
         }
     }
     if(line.size() <= 3) cout<<1;
-    else cout<<line.size();
+    else cout<<0;
     return 0;
 }
