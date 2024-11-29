@@ -6,6 +6,7 @@ using namespace std;
 int main() {
 	char arr[4][4]= {0,};
 	vector<map<int,int>> v(8,map<int,int>());
+	map<pair<int,int>,bool> win;
 	for(int i=1; i<=3; i++)
 		for(int j=1; j<=3; j++)
 			cin>>arr[i][j];
@@ -29,7 +30,15 @@ int main() {
 		v[num].insert({arr[i][j],1});
 	num++;
 	for(auto &a : v)
-		if(a.size()==2) ans++;
-	cout<<ans;
+	{
+	    if(a.size()==2) 
+	    {
+	        win.insert({{a.begin()->first,a.end()->first},1});
+	        
+	    }
+	}
+	    
+	
+	cout<<win.size();
 	return 0;
 }
