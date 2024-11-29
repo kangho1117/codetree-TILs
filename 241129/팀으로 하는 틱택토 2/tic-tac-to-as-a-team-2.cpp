@@ -30,15 +30,8 @@ int main() {
 		v[num].insert({arr[i][j],1});
 	num++;
 	for(auto &a : v)
-	{
-	    if(a.size()==2) 
-	    {
-	        //cout<<"a : "<<a.begin()->first<<" "<<a.rbegin()->first<<"\n";
-	        win.insert({{a.begin()->first,a.rbegin()->first},1});
-	    }
-	}
-// 	for(auto a : win)
-// 	    cout<<a.first.first<<" "<<a.first.second<<"\n";
+		if(a.size()==2)
+			win.insert({{a.begin()->first,a.rbegin()->first},1});
 	cout<<win.size();
 	return 0;
 }
