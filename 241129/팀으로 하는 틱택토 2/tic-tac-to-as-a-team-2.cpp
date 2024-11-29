@@ -5,8 +5,8 @@
 using namespace std;
 int main() {
 	char arr[4][4]= {0,};
-	vector<map<int,int>> v(8,map<int,int>());
-	map<pair<int,int>,bool> win;
+	vector<map<char,int>> v(8,map<char,int>());
+	map<pair<char,char>,bool> win;
 	for(int i=1; i<=3; i++)
 		for(int j=1; j<=3; j++)
 			cin>>arr[i][j];
@@ -33,12 +33,12 @@ int main() {
 	{
 	    if(a.size()==2) 
 	    {
-	        win.insert({{a.begin()->first,a.end()->first},1});
-	        
+	        //cout<<"a : "<<a.begin()->first<<" "<<a.rbegin()->first<<"\n";
+	        win.insert({{a.begin()->first,a.rbegin()->first},1});
 	    }
 	}
-	    
-	
+// 	for(auto a : win)
+// 	    cout<<a.first.first<<" "<<a.first.second<<"\n";
 	cout<<win.size();
 	return 0;
 }
