@@ -11,7 +11,6 @@ int main() {
         for(int j=0;j<n;j++)
         {
             string tempstr = str.substr(j,i);
-            //cout<<tempstr<<" "<<j<<" "<<i<<"\n";
             if(str.find(tempstr,j+1) != string::npos) break;
             else
             {
@@ -23,7 +22,6 @@ int main() {
                 }
             }
         }
-
     }
     return 0;
 }
