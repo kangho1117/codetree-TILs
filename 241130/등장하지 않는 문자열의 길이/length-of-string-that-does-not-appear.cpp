@@ -2,19 +2,28 @@
 #include <string>
 using namespace std;
 int main() {
-    int n;
+    int n,ans=1000;
     cin>>n;
     string str;
     cin>>str;
-    for(int i=0;i<n;i++)
+    for(int i=1;i<=n;i++)
     {
-        string tempstr = str.substr(0,i);
-        if(str.find(tempstr,i+1) != string::npos) continue;
-        else
+        for(int j=0;j<n;j++)
         {
-            cout<<i;
-            break;
+            string tempstr = str.substr(j,i);
+            //cout<<tempstr<<" "<<j<<" "<<i<<"\n";
+            if(str.find(tempstr,j+1) != string::npos) break;
+            else
+            {
+                ans = i;
+                if(i+j == n)
+                {
+                    cout<<ans;
+                    return 0;
+                }
+            }
         }
+
     }
     return 0;
 }
