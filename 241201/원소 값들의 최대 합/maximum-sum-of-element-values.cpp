@@ -7,11 +7,9 @@ void cal(vector<int> &v, int num, int cnt)
 {
     sum += v[num];
     num = v[num];
-    //cout<<cnt<<" "<<num<<"\n";
     if(cnt>=m) return;
     cal(v,num,++cnt);
 }
-
 int main() {
     cin>>n>>m;
     vector<int> v(n+1,0);
