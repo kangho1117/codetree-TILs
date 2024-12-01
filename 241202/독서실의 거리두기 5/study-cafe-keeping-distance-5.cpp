@@ -11,19 +11,20 @@ int main() {
     {
         if(v[i]=='0')
         {
-            int cnt1=0,cnt2=0;
+            int cnt1=0,cnt2=0,cnt3=0;
             for(int a=i-1;a>=0;a--)
             {
                 cnt1++;
                 if(v[a]=='1') break;
             }
-            for(int a=i+1;a<n;a++)
+            for(int a=i+1;a<=n+1;a++)
             {
                 cnt2++;
                 if(v[a]=='1') break;
             }
-            if(cnt1 >= cnt2) cnt1 = cnt2;
-            if(ans < cnt1) ans = cnt1; 
+            if(cnt1 > cnt2) cnt3 = cnt2;
+            else cnt3 = cnt1;
+            if(ans < cnt3) ans = cnt3; 
         }
     }
     cout<<ans;
