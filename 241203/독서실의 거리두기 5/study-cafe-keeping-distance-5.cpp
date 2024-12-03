@@ -9,7 +9,7 @@ int main() {
     int cnt4=0;
     for(int i=0;i<n;i++)
     {
-        int cnt3=100;
+        int cnt3=99;
         if(arr[i] == '0')
         {
             arr[i] = '1';
@@ -31,7 +31,6 @@ int main() {
                 }
                 if(cnt1 < cnt2 && cnt1 < cnt3) cnt3 = cnt1;
                 else if(cnt2 <= cnt1 && cnt2 < cnt3) cnt3 = cnt2;
-                //cout<<i<<" "<<j<<" "<<cnt1<<" "<<cnt2<<" "<<cnt3<<" "<<cnt4<<"\n\n";
                 if(cnt3 == 1) break;
             }
             if(cnt4 < cnt3) cnt4 = cnt3;
