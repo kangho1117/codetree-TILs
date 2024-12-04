@@ -28,7 +28,7 @@ int main() {
                 break;
             }
         }
-        if(success) cout<<i;
+        if(success) {cout<<i;break;}
 
     }
     return 0;
