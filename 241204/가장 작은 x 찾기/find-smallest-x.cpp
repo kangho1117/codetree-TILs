@@ -11,7 +11,7 @@ int main() {
         arr[i][0] = a;
         arr[i][1] = b;
     }
-    for(int i=1,ans;i<=100;i++)
+    for(int i=1,ans;i<=10000;i++)
     {
         ans = i;
         bool success = false; 
