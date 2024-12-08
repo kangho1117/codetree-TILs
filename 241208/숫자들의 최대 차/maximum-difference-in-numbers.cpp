@@ -12,10 +12,7 @@ int main() {
     {
         int sum=0;
         for(int j=0;j<=i;j++)
-        {
-            //cout<<arr[i]<<" "<<arr[j]<<" "<<arr[i]-arr[j]<<"\n";
             if(arr[i]-arr[j]<=k) sum++;
-        }
         if(sum > ans) ans = sum;
     }
     cout<<ans;
