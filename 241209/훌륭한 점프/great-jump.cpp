@@ -16,7 +16,8 @@ int main() {
             if(cnt>=k) break;
         }
         if(cnt<k) {
-            cout<<i;
+            if(i > arr[n-1]) cout<<i;
+            else cout<<arr[n-1];
             break;
         }
     }
