@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
 using namespace std;
 int main() {
     vector<int> arr(15);
@@ -16,26 +15,124 @@ int main() {
                 for(int d=1;d<=40;d++)
                 {
                     int cnt=0;
-                    if(find(arr.begin(), arr.end(),a) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),b) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),c) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),d) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),a+b) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),b+c) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),c+d) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),d+a) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),a+c) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),b+d) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),a+b+c) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),a+b+d) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),a+c+d) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),b+c+d) != arr.end()) cnt++;
-                    if(find(arr.begin(), arr.end(),a+b+c+d) != arr.end()) cnt++;
+                    vector<int> arr2,arr3(15,0);
+                    arr2 = arr;
+                    for(int z=0;z<15;z++)
+                    {
+                        if(arr2[z] == -1) continue;
+                        else if(arr2[z] == a && arr3[0] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[0] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == b && arr3[1] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[1] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == c && arr3[2] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[2] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == d && arr3[3] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[3] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == a+b && arr3[4] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[4] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == b+c && arr3[5] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[5] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == c+d && arr3[6] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[6] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == d+a && arr3[7] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[7] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == a+c && arr3[8] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[8] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == b+d && arr3[9] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[9] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == a+b+c && arr3[10] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[10] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == a+b+d && arr3[11] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[11] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == a+c+d && arr3[12] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[12] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == b+c+d && arr3[13] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[13] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else if(arr2[z] == a+b+c+d && arr3[14] == 0)
+                        {
+                            arr2[z] = -1;
+                            arr3[14] = 1;
+                            cnt++;
+                            z=0;
+                        }
+                        else break;
+                    }
                     if(cnt==15)
                     {
                         cout<<a<<" "<<b<<" "<<c<<" "<<d;
                         return 0; 
                     }
+                    else continue;
                 }
             }
         }
