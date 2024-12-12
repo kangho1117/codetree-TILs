@@ -8,7 +8,7 @@ int main() {
         cin>>arr[i];
     for(int i=1;arr[0]-i>0;i++)
     {
-        int digit[n+1]={0,},temp[n]={0,};
+        int digit[2*(n+1)]={0,},temp[n]={0,};
         temp[0] = i;
         temp[1] = arr[0]-i;
         if(temp[0] == temp[1]) continue;
