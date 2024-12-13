@@ -5,7 +5,7 @@ arr = [list(map(int, input().split())) for _ in range(n)]
 import sys
 int_max = sys.maxsize
 answer = int_max
-for x in range(arr[0][0], arr[0][1]):
+for x in range(arr[0][0] // 2, arr[0][1]+1 // 2):
     a = x
     tf_x = True
     for i in range(n):
