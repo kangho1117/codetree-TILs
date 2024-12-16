@@ -1,23 +1,21 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 int main() {
-    int n,cnt=0;
+    int n,ans=100000;
     cin>>n;
-    int arr[n];
+    int arr[n],k=17;
     for(int i=0;i<n;i++)
         cin>>arr[i];
-    while(1)
+    for(int i=0; i<=100-k; i++)
     {
-        sort(arr,arr+n);
-        if(arr[n-1]-arr[0]>17)
+        int cnt=0;
+        for(int j=0; j<n; j++)
         {
-            cnt++;
-            if(arr[0]==arr[1]) arr[n-1]--;
-            else arr[0]--;
+            if(arr[j] < i) cnt += (i-arr[j]) * (i-arr[j]);
+            else if(i+k < arr[j]) cnt += (arr[j]-(i+k)) * (arr[j]-(i+k));
         }
-        else break;
+        if(cnt < ans) ans = cnt;
     }
-    cout<<cnt*cnt;
+    cout<<ans;
     return 0;
 }
