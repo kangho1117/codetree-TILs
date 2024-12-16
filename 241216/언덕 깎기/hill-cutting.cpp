@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main() {
-    int n,ans=100000;
+    int n,ans=1000000000;
     cin>>n;
     int arr[n],k=17;
     for(int i=0;i<n;i++)
