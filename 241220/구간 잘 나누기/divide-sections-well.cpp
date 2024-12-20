@@ -54,12 +54,11 @@ int main() {
 
         if(possible && section <= m) {
             ans = min(ans, i);
-            cout<<ans;
             break;
         }
     }
 
-    //cout << ans;
+    cout << ans;
 
     return 0;
 }
