@@ -9,7 +9,13 @@ int main() {
     for(int i=0;i<n;i++)
         cin>>arr[i];
     sort(arr,arr+n);
-    for(int i=0;i<n;i++)
+    // for(int i=0;i<n;i++)
+    // {
+    //     cout<<arr[i]<<" ";
+    //     if(i%10==0) cout<<"\n";
+    // }
+        
+    for(int i=0,w=1;i<n && w<=100;i++)
     {
         int now = arr[i];
         if(n-i>=now) {
@@ -17,16 +23,21 @@ int main() {
         }
         else
         {
+            
             if(l==0) break;
             else
             {
-                int ll=0;
-                for(int k=i-1; ll<=l && k>=0;k--)
+                for(int z=now;z>arr[i-1];z--)
                 {
-                    if(arr[k]+1==now) ll++;
-                    else break;
+                    int ll=0;
+                    for(int k=i-1; ll<=l && k>=0;k--)
+                    {
+                        if(arr[k]+1==z) ll++;
+                        else break;
+                    }
+                    //cout<<"!!"<<z<<" "<<ll<<" "<<n-i+ll<<"\n";
+                    if(n-i+ll>=z) {ans = z; break;}
                 }
-                if(n-i+ll>=now) ans = now;
             }
         }
     }
