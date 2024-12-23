@@ -9,12 +9,6 @@ int main() {
     for(int i=0;i<n;i++)
         cin>>arr[i];
     sort(arr,arr+n);
-    // for(int i=0;i<n;i++)
-    // {
-    //     cout<<arr[i]<<" ";
-    //     if(i%10==0) cout<<"\n";
-    // }
-        
     for(int i=0,w=1;i<n && w<=100;i++)
     {
         int now = arr[i];
@@ -22,8 +16,7 @@ int main() {
             ans = now;
         }
         else
-        {
-            
+        {  
             if(l==0) break;
             else
             {
@@ -35,7 +28,6 @@ int main() {
                         if(arr[k]+1==z) ll++;
                         else break;
                     }
-                    //cout<<"!!"<<z<<" "<<ll<<" "<<n-i+ll<<"\n";
                     if(n-i+ll>=z) {ans = z; break;}
                 }
             }
