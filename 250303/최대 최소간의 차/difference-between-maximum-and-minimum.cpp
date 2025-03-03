@@ -9,7 +9,7 @@ int main() {
         if(arr[i] < m) m = arr[i];
         if(arr[i] > mm) mm = arr[i];
     }
-    for (int f = m; f <= mm; f++) 
+    for (int f = m; f <= 10000; f++) 
     {
         int cnt=0;
         for (int i = 0; i < n; i++) {
