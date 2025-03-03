@@ -9,17 +9,19 @@ int main() {
         if(arr[i] < m) m = arr[i];
         if(arr[i] > mm) mm = arr[i];
     }
-    for (int f = m; f <= 10000; f++) 
+    for (int f = m-k; f <= mm+k; f++) 
     {
         int cnt=0;
         for (int i = 0; i < n; i++) {
             if(arr[i]<f)
-                cnt += f-i;
+                cnt += f-arr[i];
             else if(arr[i]>f+k)
-                cnt+=arr[i] - (f+k);
+                cnt += arr[i] - (f+k);
         }
         if(cnt < ans) ans = cnt;
+        //cout<<cnt<<" ! ";
     }
+    
     cout<<ans;
     return 0;
 }
