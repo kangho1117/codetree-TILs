@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 int N;
 int pigeon[100];
@@ -11,9 +12,9 @@ int main() {
         cnt[pigeon[i]][position[i]]++;
     }
     for (int i = 1; i <= 10; i++) {
-        if((cnt[i][0] == 0 && cnt[i][1] >= 1) || (cnt[i][0] >=1 && cnt[i][1] == 0))continue;
+        if((cnt[i][0] == 0 || cnt[i][1] == 0)) continue;
         else if((cnt[i][0] == 1 && cnt[i][1] >=1) || (cnt[i][0] >= 1 && cnt[i][1] ==1)) movenum++;
-        else if(cnt[i][0] > 1 && cnt[i][1] >1) movenum+=2;
+        else if(cnt[i][0] > 1 && cnt[i][1] >1) movenum+=min(cnt[i][0],cnt[i][1]);
     }
     cout<<movenum;
     return 0;
