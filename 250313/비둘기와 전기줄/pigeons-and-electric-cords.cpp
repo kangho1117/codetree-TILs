@@ -1,18 +1,13 @@
 #include <iostream>
 #include <algorithm>
+#include <vector>
 using namespace std;
-int N;
-int pigeon[100];
-int position[100];
-int crt[11],movenum=0;
+int N, pigeon[100], position[100], movenum=0;
 int main() {
+    vector<int> crt(11,-1);
     cin >> N;
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
         cin >> pigeon[i] >> position[i];
-    }
-    for (int i = 1; i <= 10; i++) {
-        crt[i] = -1;
-    }
     for (int i = 0; i < N; i++) {
         if(crt[pigeon[i]] == -1) crt[pigeon[i]] = position[i];
         else if(crt[pigeon[i]] != position[i])
