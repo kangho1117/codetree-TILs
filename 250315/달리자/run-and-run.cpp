@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
-int n,sum=0;
-int A[100];
-int B[100];
+int n,sum=0,A[100],B[100];
 int main() {
     cin >> n;
     for (int i = 0; i < n; i++)
