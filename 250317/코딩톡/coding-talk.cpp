@@ -14,10 +14,11 @@ int main() {
     for (int i = p-1; i < m; i++) {
         people[c[i]-65] = true;
     }
-    if(u[p-2] == u[p-1]) people[c[p-2]-65] = true;
+    for(int i= p-1; i>0; i--)
+    {
+        if(u[i-1] == u[i]) people[c[i-1]-65] = true;
+    }
     for(int i=0;i<n;i++)
         if(people[i]==0) cout<<char(i+65)<<" ";
-    
-
     return 0;
 }
