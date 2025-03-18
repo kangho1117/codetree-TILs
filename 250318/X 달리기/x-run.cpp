@@ -11,13 +11,17 @@ int main() {
         {
             sec++;
             dis+=s;
+        //    cout<<sec<<" "<<s<<" "<<dis<<"\n";
         }
-        for(int s=hs;s>=1;s--)
+        for(int s=hs-1;s>=1;s--)
         {
             sec++;
             dis+=s;
+        //    cout<<sec<<" "<<s<<" "<<dis<<"\n";
         }
         if(X>dis) sec += X-dis;
+        // cout<<sec<<" "<<dis<<"\n";
+        // cout<<"-------------------\n";
         if(minsec > sec) minsec = sec;
     }
     cout<<minsec;
