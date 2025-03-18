@@ -1,29 +1,35 @@
 #include <iostream>
 using namespace std;
-int X;
-int main() {
-    cin >> X;
-    int minsec=100000;
-    for(int hs=1;hs<=X;hs++)
-    {
-        int dis=0,sec=0;
-        for(int s=1;s<=hs;s++)
-        {
-            sec++;
-            dis+=s;
-        //    cout<<sec<<" "<<s<<" "<<dis<<"\n";
-        }
-        for(int s=hs-1;s>=1;s--)
-        {
-            sec++;
-            dis+=s;
-        //    cout<<sec<<" "<<s<<" "<<dis<<"\n";
-        }
-        if(X>dis) sec += X-dis;
-        // cout<<sec<<" "<<dis<<"\n";
-        // cout<<"-------------------\n";
-        if(minsec > sec) minsec = sec;
+
+bool CheckSpeed(int xspeed,int remainX){
+    
+    int sum=0;
+    for(int i=1;i<=xspeed;i++){
+        sum+=i;
     }
-    cout<<minsec;
+    if(sum<=remainX) return true;
+    else return false;
+}
+
+int main() {
+    int x;
+    int speed=1;
+    cin>>x;
+    int currentX=0;
+    int time=0;
+    while(currentX<x){
+        currentX+=speed;
+        if(CheckSpeed(speed+1,x-currentX)) {
+            speed++;
+        }else if(CheckSpeed(speed,x-currentX)){
+
+        }else{
+            speed--;
+        }
+        
+        time++;
+        
+    }
+    cout<<time;
     return 0;
 }
