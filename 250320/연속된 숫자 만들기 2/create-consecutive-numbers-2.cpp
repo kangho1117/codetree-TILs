@@ -9,7 +9,7 @@ int main()
         cin >> pos[i];
     if (pos[0] + 1 == pos[1] && pos[0] + 2 == pos[2])
     {
-        cout << 0;
+        cout<<0;
     }
     else if (pos[0] + 2 == pos[1] || pos[1] + 2 == pos[2])
     {
