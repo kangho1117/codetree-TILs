@@ -17,9 +17,9 @@ int main() {
                 mlen = b-a;
                 ma = a;
                 mb = b;
-                a = b;
-                b = -1;
             }
+            a = b;
+            b = -1;
         }
     }
     seats[(ma+mb)/2] = '1';
@@ -34,12 +34,13 @@ int main() {
                 mlen = b-a;
                 ma = a;
                 mb = b;
-                a = b;
-                b = -1;
             }
+            a = b;
+            b = -1;
         }
     }
-    //cout<<seats<<"\n";
+    // cout<<seats<<"\n";
+    // cout<<ma<<" "<<mb<<" "<<mlen;
     cout<<mlen;
     return 0;
 }
