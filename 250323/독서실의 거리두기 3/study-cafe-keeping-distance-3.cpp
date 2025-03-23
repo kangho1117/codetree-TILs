@@ -39,8 +39,6 @@ int main() {
             b = -1;
         }
     }
-    // cout<<seats<<"\n";
-    // cout<<ma<<" "<<mb<<" "<<mlen;
     cout<<mlen;
     return 0;
 }
