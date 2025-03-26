@@ -4,12 +4,10 @@ int N;
 int a[100], b[100],ans=0;
 int main() {
     cin >> N;
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) 
         cin >> a[i] >> b[i];
-    }
-
     for (int i = 0, aa=0, bb=0; i < N; i++)
-    {//1 가위 2 주먹 3 보자기
+    {
         if(a[i]==1)
         {
             if(b[i]==2) bb++;
@@ -27,9 +25,8 @@ int main() {
         }
         if(ans < aa) ans = aa;
     }
-
     for (int i = 0, aa=0, bb=0; i < N; i++)
-    {//1 가위 2 보자기 3 주먹
+    {
         if(a[i]==1)
         {
             if(b[i]==2) aa++;
@@ -47,7 +44,6 @@ int main() {
         }
         if(ans < aa) ans = aa;
     }
-
     cout<<ans;
     return 0;
 }
