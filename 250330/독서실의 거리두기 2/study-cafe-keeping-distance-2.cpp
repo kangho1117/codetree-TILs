@@ -22,13 +22,11 @@ int main() {
                     {
                         if(s[k]=='1')
                         {
-                            //cout<<s<<" "<<j<<" "<<k<<"\n";
                             int tempdis = k-j;
                             if(tempdis < min) min = tempdis;
                             break;
                         }
                     }
-                    //cout<<" min : "<<min<<" near : "<<max_nearest<<"\n";
                 }
             }
             if(min > max_nearest) max_nearest = min;
