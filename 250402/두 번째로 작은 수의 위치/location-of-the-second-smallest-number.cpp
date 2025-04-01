@@ -1,29 +1,38 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
-int n,smallest1=100,ans=100,idx=0,temp=0;
-int a[100];
 int main() {
+    int n;
+    vector<pair<int,int>> a(101,{101,101});
     cin >> n;
-    for (int i = 1; i <= n; i++) {
-        cin >> a[i];
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a[i].first;
+        a[i].second = i;
     }
-    for (int i = 1; i <= n; i++) {
-        if(a[i] < smallest1) smallest1 = a[i];
-    }
-    for (int i = 1; i <= n; i++) {
-        if(a[i] > smallest1 && a[i] < ans) 
+    sort(a.begin(), a.end());
+
+    for(int i=0; i<=n; i++)
+    {
+        if(a[0].first != a[i].first)
         {
-            ans = a[i];
-            idx = i;
+            if(a[i].first == 101)
+            {
+                cout<<-1;
+                break;
+            }
+            else if(a[i].first != a[i+1].first)
+            {
+                cout<<a[i].second;
+                break;
+            }
+            else
+            {
+                cout<<-1;
+                break;
+            }
         }
     }
-    for (int i = 1; i <= n; i++) {
-        if(a[i] == ans)
-        {
-            temp++;
-        }
-    }
-    if(temp==1) cout<<idx;
-    else cout<<-1;
     return 0;
 }
