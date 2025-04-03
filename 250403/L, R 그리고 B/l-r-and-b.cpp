@@ -32,7 +32,7 @@ int main() {
         else if(v[nowx][nowy] == '!' || v[nowx][nowy] == 'R') continue;
         else
         {
-            v[nowx][nowy] = '.';
+            v[nowx][nowy] = '!';
             q.push({nowx+1,nowy,sum+1});
             q.push({nowx-1,nowy,sum+1});
             q.push({nowx,nowy+1,sum+1});
