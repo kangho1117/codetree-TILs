@@ -1,34 +1,40 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
-char board[12][12], now='B';
-int x,y;
-int search(int x,int y)
-{
-    now = board[x][y];
-    if(now != 'L')
-    {
-        search(x,y);
-        search(x,y);
-        search(x,y);
-    }
-}
+char board[10][10];
+int bx,by,rx,ry,lx,ly;
 int main() {
-    for (int i = 0; i <= 11; i++) {
-        for (int j = 0; j <= 11; j++) {
-            if(i==0 || i==11 || j==0 || j==11)
-            {
-                board[i][j] = '!';
-            }
-            else cin >> board[i][j];
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            cin >> board[i][j];
             if(board[i][j]=='B')
             {
-                x = i, y = j;
+                bx = i;
+                by = j;
+            }
+            if(board[i][j]=='R')
+            {
+                rx = i;
+                ry = j;
+            }
+            if(board[i][j]=='L')
+            {
+                lx = i;
+                ly = j;
             }
         }
     }
-    while(now!='L')
+    if(bx == rx && rx == lx && ((bx<rx && rx < lx) || (lx < rx && rx < bx)))
     {
-        for(int i)
+        cout<<abs(lx-bx) + abs(ly-by) -1 +2;
+    }
+    else if(by == ry && ry == ly && ((bx<rx && rx < lx) || (lx < rx && rx < bx)))
+    {
+        cout<<abs(lx-bx) + abs(ly-by) -1 +2;
+    }
+    else
+    {
+        cout<<abs(lx-bx) + abs(ly-by) -1;
     }
     return 0;
 }
