@@ -10,7 +10,7 @@ int main() {
     }
     else
     {
-        for(int i=a;i<=b;i++)
+        for(int i=a;i>=b;i--)
         cout<<i<<" ";
     }
     return 0;
