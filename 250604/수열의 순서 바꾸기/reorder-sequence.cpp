@@ -47,10 +47,12 @@ int main()
         if(sum == cmp) loop = false;
         else
         {
-            if(dq1.empty()) break;
-            dq2.push_back(dq1.front());
-            dq1.pop_front();
-            cnt++;
+            if(!dq1.empty())
+            {
+                dq2.push_back(dq1.front());
+                dq1.pop_front();
+                cnt++;
+            }
         }
         // cout<<"dq1 : ";
         // for(auto a : dq1) cout<<a<<" ";
