@@ -19,14 +19,24 @@ int main()
     while(1)
     {
         deque<int> t1 = dq1, t2 = dq2, sum;
-        while(!t1.empty() || !t2.empty())
+        while(!(t1.empty() && t2.empty()))
         {
-            if(t1.front() < t2.front() || t2.empty())
+            if(t2.empty())
             {
                 sum.push_back(t1.front());
                 t1.pop_front();
             }
-            else if(t1.front() > t2.front() || t1.empty())
+            else if(t1.empty())
+            {
+                sum.push_back(t2.front());
+                t2.pop_front();
+            }
+            else if(t1.front() < t2.front())
+            {
+                sum.push_back(t1.front());
+                t1.pop_front();
+            }
+            else if(t1.front() > t2.front())
             {
                 sum.push_back(t2.front());
                 t2.pop_front();
