@@ -22,6 +22,7 @@ int main()
         {
             cnt++;
             dq.pop_front();
+            temp = dq.front()-1;
             it = dq.begin();
         }
     }
