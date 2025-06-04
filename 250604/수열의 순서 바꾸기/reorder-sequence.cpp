@@ -2,7 +2,6 @@
 #include <deque>
 #include <algorithm>
 using namespace std;
-
 int main()
 {
     int n,cnt=0;
@@ -16,7 +15,7 @@ int main()
     cmp = dq1;
     sort(cmp.begin(), cmp.end());
     bool loop = true;
-    while(1)
+    while(loop)
     {
         deque<int> t1 = dq1, t2 = dq2, sum;
         while(!(t1.empty() && t2.empty()))
@@ -36,7 +35,7 @@ int main()
                 sum.push_back(t1.front());
                 t1.pop_front();
             }
-            else if(t1.front() > t2.front())
+            else
             {
                 sum.push_back(t2.front());
                 t2.pop_front();
@@ -45,9 +44,10 @@ int main()
         // cout<<"sum : ";
         // for(auto a : sum) cout<<a<<" ";
         // cout<<"\n";
-        if(sum == cmp) {loop = false; n=0; break;}
+        if(sum == cmp) loop = false;
         else
         {
+            if(dq1.empty()) break;
             dq2.push_back(dq1.front());
             dq1.pop_front();
             cnt++;
