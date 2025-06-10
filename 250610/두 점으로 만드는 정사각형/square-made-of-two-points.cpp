@@ -9,7 +9,7 @@ int main() {
     A = max(x1,max(x2,max(a1,a2)));
     C = min(x1,min(x2,min(a1,a2)));
     B = max(y1,max(y2,max(b1,b2)));
-    D = min(x1,min(x2,min(a1,a2)));
-    cout<< min(A-C,B-D) * min(A-C,B-D);
+    D = min(y1,min(y2,min(b1,b2)));
+    cout<< max(A-C,B-D) * max(A-C,B-D);
     return 0;
 }
