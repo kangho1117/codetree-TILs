@@ -1,38 +1,46 @@
 #include <iostream>
 #include <string>
-
+#include <vector>
 using namespace std;
-
-int n, m,pnt;
-string s;
-
 int main() {
-    cin >> n >> m;
-    cin >> s;
-    pnt = s.size();
-    for (int i = 0; i < m; i++) {
-        char command;
-        cin >> command;
-        if (command == 'L') {
-            if(pnt>0) pnt--;
-        }
-        else if (command == 'R') {
-            if(pnt < s.size()) pnt++;
-        }
-        else if (command == 'D') {
-            s.erase(pnt,pnt+1);
-        }
-        else if (command == 'P') {
-            char cc;
-            string ss;
-            cin >> cc;
-            ss = cc;
-            s.insert(pnt,ss);
-            pnt++;
-        }
-    }
+	int n, m;
+	string s;
+	vector<char> v;
+	cin >> n >> m;
+	cin >> s;
+	for (auto c : s)
+		v.push_back(c);
+	auto pnt = v.end();
+	for (int i = 0; i < m; i++) {
+		char command;
+		cin >> command;
+		if (command == 'L') {
+			if (pnt != v.begin())
+			{
+				pnt--;
+			}
+		}
+		else if (command == 'R') {
+			if (pnt != v.end())
+			{
+				pnt++;
+			}
+		}
+		else if (command == 'D') {
+			if (pnt != v.end() && !v.empty()) {
+				pnt = v.erase(pnt);
+			}
+		}
+		else if (command == 'P') {
+			char c;
+			cin >> c;
+			pnt = v.insert(pnt, c);
+			pnt++;
+		}
+	}
+	for (auto c : v) {
+		cout << c;
+	}
 
-    cout<<s;
-
-    return 0;
+	return 0;
 }
